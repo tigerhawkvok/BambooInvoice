@@ -113,7 +113,7 @@ if ($row->amount_paid < $row->total_with_tax):
 		<h2>
 			<?php if (isset($company_logo)) {echo $company_logo.'<br />';}?>
 			<?php echo $companyInfo->company_name;?> 
-			<span><?php echo $this->lang->line('invoice_invoice');?></span>
+			<span><?php echo $quote_only ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice');?></span>
 		</h2>
 
 		<p>
@@ -132,7 +132,8 @@ if ($row->amount_paid < $row->total_with_tax):
 
 	<p>
 		<strong>
-			<?php echo $this->lang->line('invoice_invoice');?> <?php echo $row->invoice_number;?><br />
+			<?php echo $quote_only ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice');?>
+			<?php echo $row->invoice_number;?><br />
 			<?php echo $date_invoice_issued;?>
 		</strong>
 	</p>
@@ -181,10 +182,12 @@ if ($row->amount_paid < $row->total_with_tax):
 		<?php echo $total_outstanding;?>
 	</p>
 
+	<?php if (!$quote_only): ?>
 	<p>
 		<strong><?php echo $this->lang->line('invoice_payment_term');?>: <?php echo $this->settings_model->get_setting('days_payment_due');?> <?php echo $this->lang->line('date_days');?></strong> 
 		(<?php echo $date_invoice_due;?>)
 	</p>
+	<?php endif; ?>
 
 	<?php if ($companyInfo->tax_code != ''):?>
 	<p><?php echo $companyInfo->tax_code;?></p>

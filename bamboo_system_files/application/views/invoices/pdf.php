@@ -94,7 +94,8 @@ table.stripe td {
 			<td width="60%">
 				<p>
 					<strong>
-						<?php echo $this->lang->line('invoice_invoice');?> <?php echo $row->invoice_number;?><br />
+						<?php echo $quote_only ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice');?>
+						<?php echo $row->invoice_number;?><br />
 						<?php echo $date_invoice_issued;?>
 					</strong>
 				</p>
@@ -104,7 +105,7 @@ table.stripe td {
 				<h2>
 					<?php if (isset($company_logo)) {echo $company_logo.'<br />';}?>
 					<?php echo $companyInfo->company_name;?> 
-					<span><?php echo $this->lang->line('invoice_invoice');?></span>
+					<span><?php echo $quote_only ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice');?></span>
 				</h2>
 
 				<p>
@@ -120,7 +121,8 @@ table.stripe td {
 		</tr>
 	</table>
 
-	<h3><?php echo $this->lang->line('invoice_bill_to');?>
+	<h3>
+		<?php echo $quote_only ? $this->lang->line('invoice_quote_for') : $this->lang->line('invoice_bill_to');?>
 		<?php echo $row->name;?>
 	</h3>
 
@@ -162,10 +164,12 @@ table.stripe td {
 		<?php echo $total_outstanding;?>
 	</p>
 
+	<?php if (!$quote_only): ?>
 	<p>
 		<strong><?php echo $this->lang->line('invoice_payment_term');?>: <?php echo $this->settings_model->get_setting('days_payment_due');?> <?php echo $this->lang->line('date_days');?></strong> 
 		(<?php echo $date_invoice_due;?>)
 	</p>
+	<?php endif; ?>
 
 	<?php if ($companyInfo->tax_code != ''):?>
 	<p><?php echo $companyInfo->tax_code;?></p>
@@ -182,7 +186,7 @@ table.stripe td {
 	<div id="footer">
 		<?php if ($this->settings_model->get_setting('display_branding') == 'y'):?>
 			<p>
-				<?php echo $this->lang->line('invoice_generated_by');?> 
+				<?php echo $quote_only ? $this->lang->line('invoice_quote_generated_by') : $this->lang->line('invoice_generated_by');?>
 				<?php echo $this->lang->line('bambooinvoice_logo');?><br />
 				<a href="http://www.bambooinvoice.org/">http://www.bambooinvoice.org</a>
 			</p>

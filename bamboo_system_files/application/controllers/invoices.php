@@ -259,12 +259,13 @@ class Invoices extends MY_Controller {
 
 	// --------------------------------------------------------------------
 
-	function view($id)
+	function view($id, $quote_only = FALSE)
 	{
 		$this->lang->load('date');
 		$this->load->plugin('js_calendar');
 		$this->load->helper('file');
 
+		$data['quote_only'] = $quote_only == "quote";
 		$data['message'] = ($this->session->flashdata('message') != '') ? $this->session->flashdata('message') : '';
 
 		$data['extraHeadContent'] = "<link type=\"text/css\" rel=\"stylesheet\" href=\"". base_url()."css/calendar.css\" />\n";
@@ -624,7 +625,7 @@ class Invoices extends MY_Controller {
 			show_error($this->lang->line('error_problem_saving'));
 		}
 		// @todo: get PDF generation to only happen in one place..., the pdf() function
-//		$invoice_number = $this->pdf($id, FALSE);
+//		$invoice_number = $this->pdf($id, FALSE, FALSE);
 
 		$recipients = $this->input->post('recipients');
 
@@ -712,12 +713,13 @@ class Invoices extends MY_Controller {
 
 	// --------------------------------------------------------------------
 
-	function pdf($id, $output = TRUE)
+	function pdf($id, $quote_only = FALSE, $output = TRUE)
 	{
 		$this->lang->load('date');
 		$this->load->plugin('to_pdf');
 		$this->load->helper('file');
 
+		$data['quote_only'] = $quote_only == "quote";
 		$data['page_title'] = $this->lang->line('menu_invoices');
 
 		$invoiceInfo = $this->invoices_model->getSingleInvoice($id);
@@ -755,7 +757,8 @@ class Invoices extends MY_Controller {
 		}
 
 		$html = $this->load->view('invoices/pdf', $data, TRUE);
-		$invoice_localized = url_title(strtolower($this->lang->line('invoice_invoice')));
+		$invoice_type = $data['quote_only'] ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice');
+		$invoice_localized = url_title(strtolower($invoice_type));
 
 		if (pdf_create($html, $invoice_localized.'_'.$data['row']->invoice_number, $output))
 		{
@@ -802,7 +805,7 @@ class Invoices extends MY_Controller {
 		foreach($invoice_set->result() as $invoice)
 		{
 			echo "$invoice->id<br />";
-			$this->pdf($invoice->id, FALSE);
+			$this->pdf($invoice->id, FALSE, FALSE);
 		}
 	}
 
