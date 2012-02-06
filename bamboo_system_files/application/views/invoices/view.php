@@ -246,7 +246,7 @@ if ($row->amount_paid < $row->total_with_tax):
 
 		<?php else:
 			foreach($invoiceHistory->result() as $row): ?>
-				<div style="clear:left; margin: 10px 0;">
+				<div style="margin: 10px 0;">
 
 					<p class="dateHolder"><?php echo formatted_invoice_date($row->date_sent);?></p>
 

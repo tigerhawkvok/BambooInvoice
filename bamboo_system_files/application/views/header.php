@@ -103,34 +103,40 @@ lang_amount = new String("<?php echo ($this->lang->line('invoice_amount'));?>");
 
 		<?php if ($this->session->userdata('logged_in')): ?>
 
+			<h3>Navigation</h3>
 			<li><?php echo anchor('', $this->lang->line('menu_root_system'), array('class' => 'dashboard'));?></li>
 			<li><?php echo anchor('invoices', $this->lang->line('menu_invoice_summary'), array('class' => 'summaryinv'));?></li>
 
 			<?php if (isset($clientList)): ?>
+				<h3>Actions</h3>
 				<li><?php echo anchor('invoices/newinvoice_first', $this->lang->line('menu_new_invoice'), array('class' => 'addinv createInvoice', 'id' => 'addinv'));?></li>
 			<?php endif; ?>
 
 			<?php if (isset($invoiceOptions)): ?>
-				<li id="invnoteli"><a class="invnote" href="javascript:void(0);" onclick="Effect.BlindDown('private_note_form', {duration: '0.4'});"><?php echo $this->lang->line('menu_private_note');?></a></li>
+				<h3>Quote Actions</h3>
+				<li><?php echo anchor('invoices/view/' . $row->id . '/quote', $this->lang->line('menu_view_quote'), array('class' => 'summaryinv'));?></li>
+				<li id="invemailquoteli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailQuote', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_quote');?></a></li>
+				<li><?php echo anchor('invoices/pdf/' . $row->id . '/quote', $this->lang->line('menu_generate_quote_pdf'), array('class' => 'emailpdf'));?></li>
+
+				<h3>Invoice Actions</h3>
+				<li><?php echo anchor('invoices/view/' . $row->id, $this->lang->line('menu_view_invoice'), array('class' => 'summaryinv'));?></li>
+				<li id="invemailli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailInvoice', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_invoice');?></a></li>
+				<li><?php echo anchor('invoices/pdf/' . $row->id, $this->lang->line('menu_generate_pdf'), array('class' => 'emailpdf'));?></li>
+
+				<h3>Other Actions</h3>
+				<?php if ($row->amount_paid < $row->total_with_tax): ?>
+					<li><?php echo anchor('invoices/edit/'.$row->id, $this->lang->line('menu_edit'), array('class' => 'invedit'));?></li>
+				<?php endif; ?>
+
+				<li id="invprintli"><?php echo anchor('', $this->lang->line('menu_print'), array('class' => 'invprint', 'onclick' => 'print(); return false;'));?></li>
 
 				<?php if ($row->amount_paid < $row->total_with_tax): ?>
 					<li id="invpayli"><a class="invpayment" href="javascript:void(0);" onclick="Effect.BlindDown('enterPayment', {duration: '0.4'});"><?php echo $this->lang->line('menu_enter_payment');?></a></li>
 				<?php endif; ?>
 
-				<li id="invemailli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailInvoice', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_invoice');?></a></li>
-				<li id="invemailquoteli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailQuote', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_quote');?></a></li>
-
-				<li><?php echo anchor('invoices/pdf/' . $row->id, $this->lang->line('menu_generate_pdf'), array('class' => 'emailpdf'));?></li>
-				<li><?php echo anchor('invoices/pdf/' . $row->id . '/quote', $this->lang->line('menu_generate_quote_pdf'), array('class' => 'emailpdf'));?></li>
-				<li id="invprintli"><?php echo anchor('', $this->lang->line('menu_print_invoice'), array('class' => 'invprint', 'onclick' => 'print(); return false;'));?></li>
-
-				<?php if ($row->amount_paid < $row->total_with_tax): ?>
-					<li><?php echo anchor('invoices/edit/'.$row->id, $this->lang->line('menu_edit_invoice'), array('class' => 'invedit'));?></li>
-				<?php endif; ?>
-
-			<li><?php echo anchor('invoices/duplicate/'.$row->id, $this->lang->line('menu_duplicate_invoice'), array('class' => 'invduplicate'));?></li>
-
-			<li><?php echo anchor('invoices/delete/'.$row->id, $this->lang->line('menu_delete_invoice'), array('class'=>'lbOn deleteConfirm'));?></li>
+				<li id="invnoteli"><a class="invnote" href="javascript:void(0);" onclick="Effect.BlindDown('private_note_form', {duration: '0.4'});"><?php echo $this->lang->line('menu_private_note');?></a></li>
+				<li><?php echo anchor('invoices/duplicate/'.$row->id, $this->lang->line('menu_duplicate'), array('class' => 'invduplicate'));?></li>
+				<li><?php echo anchor('invoices/delete/'.$row->id, $this->lang->line('menu_delete'), array('class'=>'lbOn deleteConfirm'));?></li>
 
 			<?php endif; ?>
 

@@ -186,6 +186,10 @@ input {
 	background: url(../img/menu_top.png) no-repeat left top;
 	float: left;
 }
+#invoice_action_menu h3 {
+	margin-bottom: 4px;
+	margin-top: 10px;
+}
 #invoice_action_menu p {
 	margin: 50px 10px;
 }
@@ -423,7 +427,7 @@ input {
 #enterPayment, #emailInvoice, #emailQuote, #invoice_note_form  {
 	margin-bottom: 10px;
 }
-.work_description h4, #enterPayment h4, #emailInvoice, #emailQuote h4 {
+.work_description h4, #enterPayment h4, #emailInvoice h4, #emailQuote h4 {
 	margin: 0;
 }
 
