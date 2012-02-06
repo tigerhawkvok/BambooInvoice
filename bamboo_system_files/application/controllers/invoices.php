@@ -620,7 +620,8 @@ class Invoices extends MY_Controller {
 
 		// create and save invoice to temp
 		$html = $this->load->view('invoices/pdf', $data, TRUE);
-		$invoice_localized = url_title(strtolower($this->lang->line('invoice_invoice')));
+		$invoice_invoice = $data['quote_only'] ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice')
+		$invoice_localized = url_title(strtolower($invoice_invoice));
 
 		if (pdf_create($html, $invoice_localized.'_'.$data['row']->invoice_number, FALSE))
 		{
@@ -675,7 +676,7 @@ class Invoices extends MY_Controller {
 		$email_body = $this->input->post('email_body');
 
 		$this->email->from($data['companyInfo']->primary_contact_email, $data['companyInfo']->primary_contact);
-		$this->email->subject($this->lang->line('invoice_invoice')." $invoice_number : ".$data['companyInfo']->company_name);
+		$this->email->subject("$invoice_invoice $invoice_number : ".$data['companyInfo']->company_name);
 		$this->email->message(stripslashes($email_body));
 		$this->email->attach("./invoices_temp/".$invoice_localized."_"."$invoice_number.pdf");
 
