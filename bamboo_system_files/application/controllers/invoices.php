@@ -569,7 +569,7 @@ class Invoices extends MY_Controller {
 
 	// --------------------------------------------------------------------
 
-	function email($id)
+	function email($id, $quote_only = FALSE)
 	{
 		$this->lang->load('date');
 		$this->load->plugin('to_pdf');
@@ -615,6 +615,8 @@ class Invoices extends MY_Controller {
 			$data['total_paid'] = '';
 			$data['total_outstanding'] = '';
 		}
+
+		$data['quote_only'] = $quote_only == "quote";
 
 		// create and save invoice to temp
 		$html = $this->load->view('invoices/pdf', $data, TRUE);
