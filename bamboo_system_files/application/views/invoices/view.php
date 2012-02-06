@@ -69,6 +69,45 @@ if ($row->amount_paid < $row->total_with_tax):
 
 	<p class="error" id="emailSuccess" style="display: none;"><?php echo $this->lang->line('invoice_email_success');?></p>
 
+	<?php echo form_open('invoices/email/' . $row->id . '/quote', array('id' => 'emailQuote', 'name' => 'emailQuote'), array('invoice_number'=>$row->invoice_number, 'isAjax'=>'false'));?>
+
+			<h4><?php echo $this->lang->line('invoice_email_quote_to');?> <?php echo $row->name; ?></h4>
+
+			<?php if ($clientContacts->num_rows() == 0):?>
+
+				<p><?php echo $this->lang->line('invoice_email_quote_to') . ' ' . anchor('clients', $this->lang->line('menu_clients'));?></p>
+
+			<?php else:?>
+
+			<fieldset id="recipients">
+				<legend><?php echo $this->lang->line('invoice_send_quote_to');?>:</legend>
+				<p>
+					<?php foreach($clientContacts->result() as $contactRow): ?>
+					<label for="<?php echo 'recipient' . $contactRow->id;?>"><input name="recipients[]" id="<?php echo 'recipient' . $contactRow->id;?>" type="checkbox" value="<?php echo $contactRow->id;?>" /><?php echo $contactRow->first_name . ' ' . $contactRow->last_name;?></label><br />
+					<?php endforeach;?>
+					<br /><label for="primary_contact"><input name="primary_contact" id="primary_contact" type="checkbox" value="y" /><em><?php echo $this->lang->line('invoice_blind_copy_me')?></em></label>
+				</p>
+			</fieldset>
+
+			<div id="emailHolder">
+
+				<p>
+					<label>
+						<?php echo $this->lang->line('invoice_email_message');?><br />
+						<textarea name="email_body" type="text" id="email_body" cols="50" rows="7"></textarea>
+					</label>
+				</p>
+
+				<p>
+					<span class="error" id="emailError"></span> 
+					<input type="submit" name="sendEmail" id="sendEmail" value="<?php echo $this->lang->line('menu_email_quote');?>" /> <input onclick="Effect.BlindUp('emailQuote', {duration: '0.4'});" type="reset" value="<?php echo $this->lang->line('actions_cancel');?>" name="close" id="close" />
+				</p>
+
+			</div>
+			<?php endif; ?>
+
+	<?php echo form_close();?>
+
 	<?php echo form_open('invoices/email/' . $row->id, array('id' => 'emailInvoice', 'name' => 'emailInvoice'), array('invoice_number'=>$row->invoice_number, 'isAjax'=>'false'));?>
 
 			<h4><?php echo $this->lang->line('invoice_email_invoice_to');?> <?php echo $row->name; ?></h4>

@@ -118,6 +118,7 @@ lang_amount = new String("<?php echo ($this->lang->line('invoice_amount'));?>");
 				<?php endif; ?>
 
 				<li id="invemailli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailInvoice', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_invoice');?></a></li>
+				<li id="invemailquoteli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailQuote', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_quote');?></a></li>
 
 				<li><?php echo anchor('invoices/pdf/' . $row->id, $this->lang->line('menu_generate_pdf'), array('class' => 'emailpdf'));?></li>
 				<li><?php echo anchor('invoices/pdf/' . $row->id . '/quote', $this->lang->line('menu_generate_quote_pdf'), array('class' => 'emailpdf'));?></li>

@@ -2,8 +2,10 @@ function initEmail() {
 	// reveal email invoice menu option
 	if ($('invemailli')) {
 		$('invemailli').style.display = "block";
+		$('invemailquoteli').style.display = "block";
 //		$('emailInvoice').setAttribute ("onsubmit", "return ajaxEmail()"); // for future functionality.
 		$('emailInvoice').style.display = "none";
+		$('emailQuote').style.display = "none";
 //		$('isAjax').value = 'true'; // for future functionality.
 	}
 
@@ -39,6 +41,7 @@ function stopLoading() {
 	$('emailSuccess').toggle();
 	new Effect.Highlight ('emailSuccess', {startcolor:'#F7E47D', endcolor:'#FFFFFF'});
 	Effect.BlindUp('emailInvoice', {duration: '0.4'});
+	Effect.BlindUp('emailQuote', {duration: '0.4'});
 }
 
 

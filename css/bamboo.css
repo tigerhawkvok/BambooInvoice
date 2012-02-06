@@ -414,16 +414,16 @@ input {
 	margin: 5px;
 }
 
-#loginform, .address, .work_description, #enterPayment, #emailInvoice, #invoice_note_form {
+#loginform, .address, .work_description, #enterPayment, #emailInvoice, #emailQuote, #invoice_note_form {
 	border: 1px solid #CCC;
 	background: #F6F6F6;
 	padding: 10px;
 	margin: 0;
 }
-#enterPayment, #emailInvoice, #invoice_note_form  {
+#enterPayment, #emailInvoice, #emailQuote, #invoice_note_form  {
 	margin-bottom: 10px;
 }
-.work_description h4, #enterPayment h4, #emailInvoice h4 {
+.work_description h4, #enterPayment h4, #emailInvoice, #emailQuote h4 {
 	margin: 0;
 }
 

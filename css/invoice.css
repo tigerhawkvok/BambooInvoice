@@ -75,6 +75,16 @@ h2 span {
 #emailInvoice #emailHolder textarea {
 	width: 98%;
 }
+#emailQuote textarea {
+	width: 390px;
+}
+#emailQuote #emailHolder {
+	padding-left: 250px;
+}
+
+#emailQuote #emailHolder textarea {
+	width: 98%;
+}
 .invoice_items textarea {
 	width: 100%;
 }
