@@ -620,7 +620,7 @@ class Invoices extends MY_Controller {
 
 		// create and save invoice to temp
 		$html = $this->load->view('invoices/pdf', $data, TRUE);
-		$invoice_invoice = $data['quote_only'] ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice')
+		$invoice_invoice = $data['quote_only'] ? $this->lang->line('invoice_quote') : $this->lang->line('invoice_invoice');
 		$invoice_localized = url_title(strtolower($invoice_invoice));
 
 		if (pdf_create($html, $invoice_localized.'_'.$data['row']->invoice_number, FALSE))
@@ -690,7 +690,11 @@ class Invoices extends MY_Controller {
 		$this->_delete_stored_files(); // remove saved invoice(s)
 
 		// save this in the invoice_history
-		$this->invoice_histories_model->insert_history_note($id, $email_body, $recipient_names);
+		if ($data['quote_only']) {
+			$this->invoice_histories_model->insert_history_email_quote($id, $email_body, $recipient_names);
+		} else {
+			$this->invoice_histories_model->insert_history_email_invoice($id, $email_body, $recipient_names);
+		}
 
 		// next line for debugging
 		//show_error($this->email->print_debugger());
@@ -707,7 +711,11 @@ class Invoices extends MY_Controller {
 			}
 			else
 			{
-				$this->session->set_flashdata('message', $this->lang->line('invoice_email_success'));
+				if ($data['quote_only']) {
+					$this->session->set_flashdata('message', $this->lang->line('invoice_email_quote_success'));
+				} else {
+					$this->session->set_flashdata('message', $this->lang->line('invoice_email_invoice_success'));
+				}
 			}
 
 			redirect('invoices/view/'.$id); // send them back to the invoice view

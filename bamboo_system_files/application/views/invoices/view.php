@@ -67,7 +67,7 @@ if ($row->amount_paid < $row->total_with_tax):
 
 <?php endif; ?>
 
-	<p class="error" id="emailSuccess" style="display: none;"><?php echo $this->lang->line('invoice_email_success');?></p>
+	<p class="error" id="emailSuccess" style="display: none;"><?php echo $this->lang->line('invoice_email_quote_success');?></p>
 
 	<?php echo form_open('invoices/email/' . $row->id . '/quote', array('id' => 'emailQuote', 'name' => 'emailQuote'), array('invoice_number'=>$row->invoice_number, 'isAjax'=>'false'));?>
 
@@ -250,10 +250,12 @@ if ($row->amount_paid < $row->total_with_tax):
 
 					<p class="dateHolder"><?php echo formatted_invoice_date($row->date_sent);?></p>
 
-					<?php if ($row->contact_type == 2): ?>
-						<div class="comment"><p class="commentintro"><?php echo $this->lang->line('invoice_comment');?></p><p><?php echo auto_typography(html_entity_decode(str_replace('\n', "\n", $row->email_body)));?></p></div>
-						<?php else: ?>
+					<?php if ($row->contact_type == 1): ?>
 						<div class="comment"><p class="commentintro"><?php echo $this->lang->line('invoice_sent_to');?> <?php echo implode(", ", unserialize($row->clientcontacts_id));?></p><?php echo auto_typography(str_replace('\n', "\n", $row->email_body));?></p></div>
+					<?php elseif ($row->contact_type == 2): ?>
+						<div class="comment"><p class="commentintro"><?php echo $this->lang->line('invoice_sent_quote_to');?> <?php echo implode(", ", unserialize($row->clientcontacts_id));?></p><?php echo auto_typography(str_replace('\n', "\n", $row->email_body));?></p></div>
+					<?php elseif ($row->contact_type == 3): ?>
+						<div class="comment"><p class="commentintro"><?php echo $this->lang->line('invoice_comment');?></p><p><?php echo auto_typography(html_entity_decode(str_replace('\n', "\n", $row->email_body)));?></p></div>
 					<?php endif; ?>
 
 				</div>
