@@ -213,12 +213,12 @@ if ($row->amount_paid < $row->total_with_tax):
 		<?php endforeach;?>
 	</table>
 
-	<p>
+	<p class="invoice_figures">
 		<?php echo $total_no_tax;?>
 		<?php echo $tax_info;?>
 		<?php echo $total_with_tax;?>
 		<?php echo $total_paid;?>
-		<?php echo $total_outstanding;?>
+		<b><?php echo $total_outstanding;?></b>
 	</p>
 
 	<?php if (!$quote_only): ?>

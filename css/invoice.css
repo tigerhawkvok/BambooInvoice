@@ -88,3 +88,8 @@ h2 span {
 .invoice_items textarea {
 	width: 100%;
 }
+
+.invoice_figures {
+	text-align: right;
+	padding-right: 40px;
+}

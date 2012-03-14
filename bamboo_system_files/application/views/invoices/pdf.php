@@ -68,6 +68,10 @@ th {
 	font-variant: small-caps;
 	color: #333;
 }
+.invoice_figures {
+	text-align: right;
+	padding-right: 40px;
+}
 #footer {
 	border-top: 1px solid #CCC;
 	text-align: right;
@@ -156,12 +160,12 @@ table.stripe td {
 		<?php endforeach;?>
 	</table>
 
-	<p>
+	<p class="invoice_figures">
 		<?php echo $total_no_tax;?>
 		<?php echo $tax_info;?>
 		<?php echo $total_with_tax;?>
 		<?php echo $total_paid;?>
-		<?php echo $total_outstanding;?>
+		<b><?php echo $total_outstanding;?></b><br/>
 	</p>
 
 	<?php if (!$quote_only): ?>
