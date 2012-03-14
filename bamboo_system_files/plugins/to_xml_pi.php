@@ -5,8 +5,8 @@
 
 function to_xml($object, $element_name)
 {
-	header("Content-Type: text/xml; charset=utf-8;");
-	header("Content-Disposition: attachment; filename=$element_name.xml");
+  header("Content-Type: text/xml; charset=utf-8;");
+  header("Content-Disposition: attachment; filename=$element_name.xml");
 
    $obj =& get_instance();
    

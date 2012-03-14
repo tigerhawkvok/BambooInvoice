@@ -222,7 +222,7 @@ class Cellmap {
 
     if ( !isset($this->_frames[$key]) ) {
 //      throw new DOMPDF_Internal_Exception("Frame not found in cellmap");
-		return FALSE;
+    return FALSE;
     }
       
     return $this->_frames[$key];
@@ -236,7 +236,7 @@ class Cellmap {
 
     if ( !isset($this->_frames[$key]) ) {
 //      throw new DOMPDF_Internal_Exception("Frame not found in cellmap");
-		return FALSE;
+    return FALSE;
     }
 
     $col = $this->_frames[$key]["columns"][0];
@@ -262,8 +262,8 @@ class Cellmap {
 
     if ( !isset($this->_frames[$key]) ) {
 //      throw new DOMPDF_Internal_Exception("Frame not found in cellmap");
-		return FALSE;    
-	}
+    return FALSE;    
+  }
 
     $cols = $this->_frames[$key]["columns"];
     $w = 0;
@@ -279,7 +279,7 @@ class Cellmap {
 
     if ( !isset($this->_frames[$key]) ) 
 //      throw new DOMPDF_Internal_Exception("Frame not found in cellmap");
-		return FALSE;
+    return FALSE;
 
     $rows = $this->_frames[$key]["rows"];
     $h = 0;
@@ -560,11 +560,11 @@ class Cellmap {
     // Remove all frames from this row
     foreach ( $rows as $r ) {
       foreach ( $columns as $c ) {
-		if (isset($this->_cells[$r][$c])) { 
-        	$frame = $this->_cells[$r][$c];
-        	unset($this->_frames[ $frame->get_id() ]);
-	        unset($this->_cells[$r][$c]);
-		}
+    if (isset($this->_cells[$r][$c])) { 
+          $frame = $this->_cells[$r][$c];
+          unset($this->_frames[ $frame->get_id() ]);
+          unset($this->_cells[$r][$c]);
+    }
       }
     }
 

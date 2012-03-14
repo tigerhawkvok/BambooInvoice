@@ -266,12 +266,12 @@ $lang['utilities_version_undetermined'] = "Versiooni numbrit ei &otilde;nnestunu
 
 $lang['menu_did_you_know_quotes'] = array(
 
-					"BambooINVOICE omab vestluskeskkonda aadressil forums.bambooinvoice.org kus saab k&uuml;sida abi, suhelda ja tellida v&otilde;imalikke uuendusi.",
-					"BambooINVOICE on v&auml;lja antud GPL litsentsi alusel.",
-					"Sätteid saab muuta igal ajal kasutades menüüd &ldquo;sätted&rdquo;.",
-					"Abi fail täieneb igapäevaga.  Mine aadressile BambooINVOICE.org viimaste uuenduste saamiseks!",
-					"Sa võid sisestada andmeid uue firma kohta kasutades menüüd &ldquo;firmad&rdquo;, või vahetult enne arve väljastamist!",
-					"Üks bambuse vars korralikust juurestikust saavutab oma  täieliku pikkuse ühe aastaga!",
-					"Bambuse taime pikk iga on Hiinas pika ea sümboliks ja Indias on ta sõpruse sümboliks."
-					);
+          "BambooINVOICE omab vestluskeskkonda aadressil forums.bambooinvoice.org kus saab k&uuml;sida abi, suhelda ja tellida v&otilde;imalikke uuendusi.",
+          "BambooINVOICE on v&auml;lja antud GPL litsentsi alusel.",
+          "Sätteid saab muuta igal ajal kasutades menüüd &ldquo;sätted&rdquo;.",
+          "Abi fail täieneb igapäevaga.  Mine aadressile BambooINVOICE.org viimaste uuenduste saamiseks!",
+          "Sa võid sisestada andmeid uue firma kohta kasutades menüüd &ldquo;firmad&rdquo;, või vahetult enne arve väljastamist!",
+          "Üks bambuse vars korralikust juurestikust saavutab oma  täieliku pikkuse ühe aastaga!",
+          "Bambuse taime pikk iga on Hiinas pika ea sümboliks ja Indias on ta sõpruse sümboliks."
+          );
 ?>

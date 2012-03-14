@@ -261,12 +261,12 @@ $lang['utilities_version_check'] = "New version check";
 $lang['utilities_version_undetermined'] = "Version status could not be determined.";
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE wird auf Basis der GPL Lizenz veröffentlicht.",
-					"Ihre Einstellungen k&ouml;nnen zu jedem Zeitpunkt mit dem &ldquo;Einstellungen&rdquo; Men&uuml; ge&auml;ndert werden.",
-					"Die Hilfe-Seiten wachsen jeden Tag. Besuchen Sie BambooINVOICE.org, um die aktuellste Version zu erhalten!",
-					"Sie k&ouml;nnen neue Kunden mit Hilfe des &ldquo;Kunden&rdquo; Men&uuml;s anlegen - oder direkt beim Erstellen einer neuen Rechnung!",
-					"Bereits nach einem Jahr kann ein einzelner Bambus-Stamm seine volle Gr&ouml;&szlig;e erreichen!",
-					"Aufgrund ihrer Langlebigkeit ist die Bambus-Pflanze im Chinesischen das Symbol f&uuml;r langes Leben und im Indischen das Symbol f&uuml;r Freundschaft."
-					);
+          "BambooINVOICE wird auf Basis der GPL Lizenz veröffentlicht.",
+          "Ihre Einstellungen k&ouml;nnen zu jedem Zeitpunkt mit dem &ldquo;Einstellungen&rdquo; Men&uuml; ge&auml;ndert werden.",
+          "Die Hilfe-Seiten wachsen jeden Tag. Besuchen Sie BambooINVOICE.org, um die aktuellste Version zu erhalten!",
+          "Sie k&ouml;nnen neue Kunden mit Hilfe des &ldquo;Kunden&rdquo; Men&uuml;s anlegen - oder direkt beim Erstellen einer neuen Rechnung!",
+          "Bereits nach einem Jahr kann ein einzelner Bambus-Stamm seine volle Gr&ouml;&szlig;e erreichen!",
+          "Aufgrund ihrer Langlebigkeit ist die Bambus-Pflanze im Chinesischen das Symbol f&uuml;r langes Leben und im Indischen das Symbol f&uuml;r Freundschaft."
+          );
 
 ?>

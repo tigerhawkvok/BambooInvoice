@@ -126,7 +126,7 @@ class Table_Cell_Frame_Reflower extends Block_Frame_Reflower {
 
     // Let the cellmap know our height
     //$cell_height = $height / count($cells["rows"])  + $top_space + $bottom_space;
-	$cell_height = $height / (count($cells["rows"])?count($cells["rows"]):1) + $top_space + $bottom_space; 
+  $cell_height = $height / (count($cells["rows"])?count($cells["rows"]):1) + $top_space + $bottom_space; 
 
     foreach ((array)$cells["rows"] as $i)
       $cellmap->set_row_height($i, $cell_height);

@@ -254,12 +254,12 @@ $lang['utilities_version_check'] = "Nouvelle version détécté";
 $lang['utilities_version_undetermined'] = "La version n\'a pu être determiné.";
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE est sous licence GPL.",
-					"Vos paramètres peuvent être modifiés à tout moment par le menu &ldquo;Paramètres&rdquo;.",
-					"Les textes d\'aide se complètent chaque jours. Visitez BambooINVOICE.org pour la dernière version!",
-					"Vous pouvez créer un nouveau client par le menu &ldquo;clients&rdquo;, ou immédiatement avant d\'émettre une facture!",
-					"Un seul plan de bamboo établi d\'un réseau racinaire atteint la maturité en seulement un an!",
-					"La longue vie du bamboo &rsquo; en fait le symbole chinois de la longévité... En Inde, un symbole d'amitié."
-					);
+          "BambooINVOICE est sous licence GPL.",
+          "Vos paramètres peuvent être modifiés à tout moment par le menu &ldquo;Paramètres&rdquo;.",
+          "Les textes d\'aide se complètent chaque jours. Visitez BambooINVOICE.org pour la dernière version!",
+          "Vous pouvez créer un nouveau client par le menu &ldquo;clients&rdquo;, ou immédiatement avant d\'émettre une facture!",
+          "Un seul plan de bamboo établi d\'un réseau racinaire atteint la maturité en seulement un an!",
+          "La longue vie du bamboo &rsquo; en fait le symbole chinois de la longévité... En Inde, un symbole d'amitié."
+          );
 
 ?>

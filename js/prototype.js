@@ -2075,7 +2075,7 @@ Selector.prototype = {
         p = ps[i];
         if (m = e.match(p)) {
           this.matcher.push(typeof c[i] == 'function' ? c[i](m) :
-    	      new Template(c[i]).evaluate(m));
+            new Template(c[i]).evaluate(m));
           e = e.replace(m[0], '');
           break;
         }
@@ -2352,7 +2352,7 @@ Object.extend(Selector, {
 
     nextElementSibling: function(node) {
       while (node = node.nextSibling)
-	      if (node.nodeType == 1) return node;
+        if (node.nodeType == 1) return node;
       return null;
     },
 
@@ -2626,7 +2626,7 @@ var Form = {
       if (!element.disabled && element.name) {
         var key = element.name, value = $(element).getValue();
         if (value != null) {
-         	if (key in result) {
+           if (key in result) {
             if (result[key].constructor != Array) result[key] = [result[key]];
             result[key].push(value);
           }

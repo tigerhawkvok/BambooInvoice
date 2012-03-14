@@ -259,13 +259,13 @@ $lang['utilities_version_check'] = "Leta efter uppdateringar";
 $lang['utilities_version_undetermined'] = "Versionstatus kunde inte fastställas."; 
 
 $lang['menu_did_you_know_quotes'] = array(
-										'BambooINVOICE har forum på forums.bambooinvoice.org för support, funktionen begäran och chat.',
-										'BambooINVOICE är släppt under GPL-licens.',
-										'Dina inställningar kan ändras när som helst via menyn Inställningar.',
-										'Hjälperfiler förnyas varje dag. Besök BambooINVOICE.org för den senaste versionen!',
-										'Du kan skapa en ny klient från Kunder-menyn eller precis innan du skapar en faktura!', 
-										'En enda planta av bambu från ett etablerat rotsystem når vanligtvis full höjd på bara ett år!',
-										'Bambuplantans livslängd har gjort den till en kinesisk symbol för långt liv, och i Indien en symbol för vänskap.'
-					);
+                    'BambooINVOICE har forum på forums.bambooinvoice.org för support, funktionen begäran och chat.',
+                    'BambooINVOICE är släppt under GPL-licens.',
+                    'Dina inställningar kan ändras när som helst via menyn Inställningar.',
+                    'Hjälperfiler förnyas varje dag. Besök BambooINVOICE.org för den senaste versionen!',
+                    'Du kan skapa en ny klient från Kunder-menyn eller precis innan du skapar en faktura!', 
+                    'En enda planta av bambu från ett etablerat rotsystem når vanligtvis full höjd på bara ett år!',
+                    'Bambuplantans livslängd har gjort den till en kinesisk symbol för långt liv, och i Indien en symbol för vänskap.'
+          );
 
 ?>

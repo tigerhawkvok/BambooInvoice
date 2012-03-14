@@ -15,15 +15,15 @@ $tax2 = 0;
 
 <h3><?php echo $this->lang->line('reports_yearly_income').' '.$current_year;?></h3>
 <p>
-	<?php
-	foreach ($years as $year)
-	{
-		echo anchor('reports/index/'.$year, $year) . ' ';
-	}
-	?>
+  <?php
+  foreach ($years as $year)
+  {
+    echo anchor('reports/index/'.$year, $year) . ' ';
+  }
+  ?>
 </p>
 <fieldset id="graph_legend">
-	<legend><?php echo $this->lang->line('reports_legend');?></legend>
+  <legend><?php echo $this->lang->line('reports_legend');?></legend>
 </fieldset>
 <div><canvas id="yearly_graph" height="250" width="700"></canvas></div>
 
@@ -34,66 +34,66 @@ $tax2 = 0;
  * to accept it.  Man that browser... The (ugly) spacing is needed.
  */
 
-			var dataset = {
-				'<?php echo $this->lang->line('menu_invoices');?>': 	[<?php
+      var dataset = {
+        '<?php echo $this->lang->line('menu_invoices');?>':   [<?php
 foreach ($month_invoices as $key => $value) {
-	if ($value == '') {$value = 0;}
-	echo '[' . ($key-1) . ', ' . $value . ']';
-		if ($key <= 11) {
-			echo ",";
-		}
+  if ($value == '') {$value = 0;}
+  echo '[' . ($key-1) . ', ' . $value . ']';
+    if ($key <= 11) {
+      echo ",";
+    }
 }
 ?>]<?php
 if (max($month_tax1) != 0) {
-	echo ",\n'" . $this->settings_model->get_setting('tax1_desc') . "': 	[";
-	foreach ($month_tax1 as $key => $value) {
-		if ($value == '') {$value = 0;}
-		echo '[' . ($key-1) . ', ' . $value . ']';
-		if ($key <= 11) {
-			echo ",";
-		}
-	}
-	echo ']';
+  echo ",\n'" . $this->settings_model->get_setting('tax1_desc') . "':   [";
+  foreach ($month_tax1 as $key => $value) {
+    if ($value == '') {$value = 0;}
+    echo '[' . ($key-1) . ', ' . $value . ']';
+    if ($key <= 11) {
+      echo ",";
+    }
+  }
+  echo ']';
 }
 if (max($month_tax2) != 0) {
-	echo ",\n'" . $this->settings_model->get_setting('tax2_desc') . "': 	[";
-	foreach ($month_tax2 as $key => $value) {
-		if ($value == '') {$value = 0;}
-		echo '[' . ($key-1) . ', ' . $value . ']';
-		if ($key <= 11) {
-			echo ",";
-		}
-	}
-	echo ']';
+  echo ",\n'" . $this->settings_model->get_setting('tax2_desc') . "':   [";
+  foreach ($month_tax2 as $key => $value) {
+    if ($value == '') {$value = 0;}
+    echo '[' . ($key-1) . ', ' . $value . ']';
+    if ($key <= 11) {
+      echo ",";
+    }
+  }
+  echo ']';
 }
 
 ?>
-			};
+      };
 
-			var options = {
-				padding: {left: 50, right: 0, top: 10, bottom: 30},
-				backgroundColor: '#f2f2f2',
-				colorScheme: 'blue',
-			   	xTicks: [
-					{v:0, label:'<?php echo html_entity_decode($this->lang->line('cal_jan'));?>'}, 
-			      	{v:1, label:'<?php echo html_entity_decode($this->lang->line('cal_feb'));?>'}, 
-			      	{v:2, label:'<?php echo html_entity_decode($this->lang->line('cal_mar'));?>'},
-			      	{v:3, label:'<?php echo html_entity_decode($this->lang->line('cal_apr'));?>'},
-			      	{v:4, label:'<?php echo html_entity_decode($this->lang->line('cal_may'));?>'}, 
-			      	{v:5, label:'<?php echo html_entity_decode($this->lang->line('cal_jun'));?>'},
-			      	{v:6, label:'<?php echo html_entity_decode($this->lang->line('cal_jul'));?>'},
-			      	{v:7, label:'<?php echo html_entity_decode($this->lang->line('cal_aug'));?>'}, 
-			      	{v:8, label:'<?php echo html_entity_decode($this->lang->line('cal_sep'));?>'},
-			      	{v:9, label:'<?php echo html_entity_decode($this->lang->line('cal_oct'));?>'},
-			      	{v:10, label:'<?php echo html_entity_decode($this->lang->line('cal_nov'));?>'}, 
-			      	{v:11, label:'<?php echo html_entity_decode($this->lang->line('cal_dec'));?>'}
-				]
-			};
+      var options = {
+        padding: {left: 50, right: 0, top: 10, bottom: 30},
+        backgroundColor: '#f2f2f2',
+        colorScheme: 'blue',
+           xTicks: [
+          {v:0, label:'<?php echo html_entity_decode($this->lang->line('cal_jan'));?>'}, 
+              {v:1, label:'<?php echo html_entity_decode($this->lang->line('cal_feb'));?>'}, 
+              {v:2, label:'<?php echo html_entity_decode($this->lang->line('cal_mar'));?>'},
+              {v:3, label:'<?php echo html_entity_decode($this->lang->line('cal_apr'));?>'},
+              {v:4, label:'<?php echo html_entity_decode($this->lang->line('cal_may'));?>'}, 
+              {v:5, label:'<?php echo html_entity_decode($this->lang->line('cal_jun'));?>'},
+              {v:6, label:'<?php echo html_entity_decode($this->lang->line('cal_jul'));?>'},
+              {v:7, label:'<?php echo html_entity_decode($this->lang->line('cal_aug'));?>'}, 
+              {v:8, label:'<?php echo html_entity_decode($this->lang->line('cal_sep'));?>'},
+              {v:9, label:'<?php echo html_entity_decode($this->lang->line('cal_oct'));?>'},
+              {v:10, label:'<?php echo html_entity_decode($this->lang->line('cal_nov'));?>'}, 
+              {v:11, label:'<?php echo html_entity_decode($this->lang->line('cal_dec'));?>'}
+        ]
+      };
 
-			var line = new Plotr.LineChart('yearly_graph',options);
-			line.addDataset(dataset);
-			line.render();
-			line.addLegend($('graph_legend'));
+      var line = new Plotr.LineChart('yearly_graph',options);
+      line.addDataset(dataset);
+      line.render();
+      line.addLegend($('graph_legend'));
 </script>
 
 <!-- Soon

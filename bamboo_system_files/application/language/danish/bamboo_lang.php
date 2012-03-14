@@ -263,13 +263,13 @@ $lang['utilities_version_check'] = "Ny Version Chek";
 $lang['utilities_version_undetermined'] = "Version status kunne ikke bestemmes";
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE har fora på forums.bambooinvoice.org til support, feature anmodninger, og at chatte.",
-					"BambooINVOICE er udgivet under GPL licensen.",
-					"Dine indstillinger kan til enhver tid ændres gennem &ldquo;Indstillinger&rdquo; menu.",
-					"Hjælpe-filen vokser hver dag. Besøg BambooINVOICE.org for den seneste version!",
-					"Du kan oprette en ny kunde fra &ldquo;Klienter&rdquo; menu, eller ligefør du udsteder en faktura!",
-					"En enkelt stilk af bamboo fra en etableret rodsystemet når typisk op på fuld højde på blot et år!",
-					"Bamboo planten&rsquo;s lang levetid, det er et kinesisk symbol på lang levetid, og i Indien er det et symbol på venskab."
-					);
+          "BambooINVOICE har fora på forums.bambooinvoice.org til support, feature anmodninger, og at chatte.",
+          "BambooINVOICE er udgivet under GPL licensen.",
+          "Dine indstillinger kan til enhver tid ændres gennem &ldquo;Indstillinger&rdquo; menu.",
+          "Hjælpe-filen vokser hver dag. Besøg BambooINVOICE.org for den seneste version!",
+          "Du kan oprette en ny kunde fra &ldquo;Klienter&rdquo; menu, eller ligefør du udsteder en faktura!",
+          "En enkelt stilk af bamboo fra en etableret rodsystemet når typisk op på fuld højde på blot et år!",
+          "Bamboo planten&rsquo;s lang levetid, det er et kinesisk symbol på lang levetid, og i Indien er det et symbol på venskab."
+          );
 
 ?>

@@ -12,33 +12,33 @@
 
 Glider = Class.create();
 Object.extend(Object.extend(Glider.prototype, Abstract.prototype), {
-	initialize: function(wrapper, options){
-	    this.scrolling  = false;
-	    this.wrapper    = $(wrapper);
-	    this.scroller   = this.wrapper.down('div.scroller');
-	    this.sections   = this.wrapper.getElementsBySelector('div.section');
-	    this.options    = Object.extend({ duration: 1.0, frequency: 3 }, options || {});
+  initialize: function(wrapper, options){
+      this.scrolling  = false;
+      this.wrapper    = $(wrapper);
+      this.scroller   = this.wrapper.down('div.scroller');
+      this.sections   = this.wrapper.getElementsBySelector('div.section');
+      this.options    = Object.extend({ duration: 1.0, frequency: 3 }, options || {});
 
-	    this.sections.each( function(section, index) {
-	      section._index = index;
-	    });    
+      this.sections.each( function(section, index) {
+        section._index = index;
+      });    
 
-	    this.events = {
-	      click: this.click.bind(this)
-	    };
+      this.events = {
+        click: this.click.bind(this)
+      };
 
-	    this.addObservers();
-			if(this.options.initialSection) this.moveTo(this.options.initialSection, this.scroller, { duration:this.options.duration });  // initialSection should be the id of the section you want to show up on load
-			if(this.options.autoGlide) this.start();
-	  },
-	
+      this.addObservers();
+      if(this.options.initialSection) this.moveTo(this.options.initialSection, this.scroller, { duration:this.options.duration });  // initialSection should be the id of the section you want to show up on load
+      if(this.options.autoGlide) this.start();
+    },
+  
   addObservers: function() {
     var controls = this.wrapper.getElementsBySelector('div.controls a');
     controls.invoke('observe', 'click', this.events.click);
-  },	
+  },  
 
   click: function(event) {
-		this.stop();
+    this.stop();
     var element = Event.findElement(event, 'a');
     if (this.scrolling) this.scrolling.cancel();
     
@@ -46,18 +46,18 @@ Object.extend(Object.extend(Glider.prototype, Abstract.prototype), {
     Event.stop(event);
   },
 
-	moveTo: function(element, container, options){
-			this.current = $(element);
+  moveTo: function(element, container, options){
+      this.current = $(element);
 
-			Position.prepare();
-	    var containerOffset = Position.cumulativeOffset(container),
-	     elementOffset = Position.cumulativeOffset($(element));
+      Position.prepare();
+      var containerOffset = Position.cumulativeOffset(container),
+       elementOffset = Position.cumulativeOffset($(element));
 
-		  this.scrolling 	= new Effect.SmoothScroll(container, 
-				{duration:options.duration, x:(elementOffset[0]-containerOffset[0]), y:(elementOffset[1]-containerOffset[1])});
-		  return false;
-		},
-		
+      this.scrolling   = new Effect.SmoothScroll(container, 
+        {duration:options.duration, x:(elementOffset[0]-containerOffset[0]), y:(elementOffset[1]-containerOffset[1])});
+      return false;
+    },
+    
   next: function(){
     if (this.current) {
       var currentIndex = this.current._index;
@@ -68,7 +68,7 @@ Object.extend(Object.extend(Glider.prototype, Abstract.prototype), {
       duration: this.options.duration
     });
   },
-	
+  
   previous: function(){
     if (this.current) {
       var currentIndex = this.current._index;
@@ -81,24 +81,24 @@ Object.extend(Object.extend(Glider.prototype, Abstract.prototype), {
     });
   },
 
-	stop: function()
-	{
-		clearTimeout(this.timer);
-	},
-	
-	start: function()
-	{
-		this.periodicallyUpdate();
-	},
-		
-	periodicallyUpdate: function()
-	{ 
-		if (this.timer != null) {
-			clearTimeout(this.timer);
-			this.next();
-		}
-		this.timer = setTimeout(this.periodicallyUpdate.bind(this), this.options.frequency*1000);
-	}
+  stop: function()
+  {
+    clearTimeout(this.timer);
+  },
+  
+  start: function()
+  {
+    this.periodicallyUpdate();
+  },
+    
+  periodicallyUpdate: function()
+  { 
+    if (this.timer != null) {
+      clearTimeout(this.timer);
+      this.next();
+    }
+    this.timer = setTimeout(this.periodicallyUpdate.bind(this), this.options.frequency*1000);
+  }
 
 });
 

@@ -260,13 +260,13 @@ $lang['utilities_version_check'] = "Controlla la presenza di una nuova versione"
 $lang['utilities_version_undetermined'] = "Impossibile determinare lo stato dell\'aggiornamento.";
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE ha il forum di aiuto su forums.bambooinvoice.org, per richiedere funzionalit&agrave; e consigli.",
-					"BambooINVOICE &egrave rilasciato sotto licenza GPL.",
-					"Le tue configurazioni possono essere modificate in qualsiasi momento tramite il menu &ldquo;configura&rdquo;.",
-					"Il file di aiuto viene modificato quotidianamente.  Visita BambooINVOICE.org per scaricare l'ultima versione!",
-					"Puoi creare un nuovo cliente tramite il menu &ldquo;clienti&rdquo; o durante l'emissione della fattura!",
-					"Una singola canna di bambo impiega solo un anno a raggiungere la massima altezza!",
-					"La lunga vita della pianta del bamboo l\'ha resa in Cina il simbolo di lunga vita e in India di amicizia."
-					);
+          "BambooINVOICE ha il forum di aiuto su forums.bambooinvoice.org, per richiedere funzionalit&agrave; e consigli.",
+          "BambooINVOICE &egrave rilasciato sotto licenza GPL.",
+          "Le tue configurazioni possono essere modificate in qualsiasi momento tramite il menu &ldquo;configura&rdquo;.",
+          "Il file di aiuto viene modificato quotidianamente.  Visita BambooINVOICE.org per scaricare l'ultima versione!",
+          "Puoi creare un nuovo cliente tramite il menu &ldquo;clienti&rdquo; o durante l'emissione della fattura!",
+          "Una singola canna di bambo impiega solo un anno a raggiungere la massima altezza!",
+          "La lunga vita della pianta del bamboo l\'ha resa in Cina il simbolo di lunga vita e in India di amicizia."
+          );
 
 ?>

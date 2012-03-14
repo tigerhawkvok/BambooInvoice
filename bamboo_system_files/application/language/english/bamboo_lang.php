@@ -278,12 +278,12 @@ $lang['utilities_version_check'] = "New version check";
 $lang['utilities_version_undetermined'] = "Version status could not be determined.";
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE has forums at forums.bambooinvoice.org for support, feature requests, and to chat.",
-					"BambooINVOICE is released under the GPL license.",
-					"Your settings can be changed at any time through the &ldquo;settings&rdquo; menu.",
-					"The help file is sprouting every day.  Visit BambooINVOICE.org for the latest version!",
-					"You can create a new client from the &ldquo;clients&rdquo; menu, or right before you issue an invoice!",
-					"A single stem of bamboo from an established root system typically reaches full height in just one year!",
-					"The bamboo plant&rsquo;s long life makes it a Chinese symbol of long life, and in India it is a symbol of friendship."
-					);
+          "BambooINVOICE has forums at forums.bambooinvoice.org for support, feature requests, and to chat.",
+          "BambooINVOICE is released under the GPL license.",
+          "Your settings can be changed at any time through the &ldquo;settings&rdquo; menu.",
+          "The help file is sprouting every day.  Visit BambooINVOICE.org for the latest version!",
+          "You can create a new client from the &ldquo;clients&rdquo; menu, or right before you issue an invoice!",
+          "A single stem of bamboo from an established root system typically reaches full height in just one year!",
+          "The bamboo plant&rsquo;s long life makes it a Chinese symbol of long life, and in India it is a symbol of friendship."
+          );
 ?>

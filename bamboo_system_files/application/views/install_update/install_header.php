@@ -3,34 +3,34 @@
 <title>BambooInvoice Installer</title>
 <style type="text/css">
 h1 {
-	text-align: center;
+  text-align: center;
 }
 div {
-	margin: auto 50px;
-	border: 1px solid #CCC;
-	background: #F6F6F6; padding: 10px;
-	font-family: Helvetica, Arial, Verdana, sans-serif;
+  margin: auto 50px;
+  border: 1px solid #CCC;
+  background: #F6F6F6; padding: 10px;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 .bamboo_invoice_bam {
-	color: #5E88B6;
-	font-weight: bold;
-	text-transform: capitalize;
+  color: #5E88B6;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 .bamboo_invoice_inv {
-	font-weight: bold;
-	font-variant: small-caps;
-	color: #333;
+  font-weight: bold;
+  font-variant: small-caps;
+  color: #333;
 }
 
 label span {
-	display: block;
-	float: left;
-	width: 170px;
-	margin: 0;
+  display: block;
+  float: left;
+  width: 170px;
+  margin: 0;
 }
 
 label {
-	line-height: 150%;
+  line-height: 150%;
 }
 
 </style></head><body>

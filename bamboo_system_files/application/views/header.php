@@ -7,28 +7,28 @@ header('Content-Type: text/html; Charset=UTF-8');
 <head>
 <title><?php
 /**
-	STOP!!! PLEASE READ THIS!!!!
-	OK, if you're thinking about modifying Bamboo and redistributing it, that's fine, and that's part of the license that I released
-	it under, but please do it knowing that this is NOT something I want or welcome. IT WILL NOT MAKE ME HAPPY,
-	and no, I'm not very impressed by your work. And for the love of Pete, don't come to my blog and forums bragging
-	about your "improvements" to Bamboo please.
+  STOP!!! PLEASE READ THIS!!!!
+  OK, if you're thinking about modifying Bamboo and redistributing it, that's fine, and that's part of the license that I released
+  it under, but please do it knowing that this is NOT something I want or welcome. IT WILL NOT MAKE ME HAPPY,
+  and no, I'm not very impressed by your work. And for the love of Pete, don't come to my blog and forums bragging
+  about your "improvements" to Bamboo please.
 */
 echo 'Bam'.'boo'.'In'.'voice'; // this is like this so that nobody can get it by a search and replace
 /**
-	Several times now I've had people take my work, strip out the word "bamboo" and rename it something else - then 
-	claim they have written their own "invoicing software".  As a developer, this sucks.  Usually its a dumb search 
-	and replace, and they replace my name with their own.  Look, if you want to modify Bamboo, fine, but please don't
-	discount my work.  Leave my copyright in there.  Better yet, why not contact me and try to work something out.
-	My email is info@bambooinvoice.org, please use it.  I don't want to see more poor quality, half-supported forks 
-	of BambooInvoice out there. If you must take Bamboo, please don't use my images.
-	
-	If you aren't redistributing or hosting Bamboo or other people, then please ignore everything you just read.  
-	For your own purposes, I ABSOLUTELY welcome and encourage you to modify things. Go nuts!  Tear it apart, see what
-	makes it tick and put it back together. Feel free to email me or ask the forums questions about "why".  I love that
-	stuff.  This is strictly about people taking my work, removing credit to me, and perverting it into something else. :)
-	
-	Thanks for your understanding!
-	Derek Allard (http://derekallard.com)
+  Several times now I've had people take my work, strip out the word "bamboo" and rename it something else - then 
+  claim they have written their own "invoicing software".  As a developer, this sucks.  Usually its a dumb search 
+  and replace, and they replace my name with their own.  Look, if you want to modify Bamboo, fine, but please don't
+  discount my work.  Leave my copyright in there.  Better yet, why not contact me and try to work something out.
+  My email is info@bambooinvoice.org, please use it.  I don't want to see more poor quality, half-supported forks 
+  of BambooInvoice out there. If you must take Bamboo, please don't use my images.
+  
+  If you aren't redistributing or hosting Bamboo or other people, then please ignore everything you just read.  
+  For your own purposes, I ABSOLUTELY welcome and encourage you to modify things. Go nuts!  Tear it apart, see what
+  makes it tick and put it back together. Feel free to email me or ask the forums questions about "why".  I love that
+  stuff.  This is strictly about people taking my work, removing credit to me, and perverting it into something else. :)
+  
+  Thanks for your understanding!
+  Derek Allard (http://derekallard.com)
 */
 echo ': '.$page_title;
 ?></title>
@@ -77,89 +77,89 @@ lang_taxable = new String("<?php echo ($this->lang->line('invoice_taxable'));?>"
 lang_amount = new String("<?php echo ($this->lang->line('invoice_amount'));?>");
 </script>
 <?php
-	if (isset($extraHeadContent)) {
-		echo $extraHeadContent;
-	}
+  if (isset($extraHeadContent)) {
+    echo $extraHeadContent;
+  }
 ?>
 </head>
 <body>
 <div id="allHolder">
-	<div id="container">
-		<div id="masthead">
+  <div id="container">
+    <div id="masthead">
 
-			<h1 id="bamboo_logo"><a href="<?php echo site_url()?>"><?php echo $this->lang->line('bambooinvoice_logo');?></a></h1>
+      <h1 id="bamboo_logo"><a href="<?php echo site_url()?>"><?php echo $this->lang->line('bambooinvoice_logo');?></a></h1>
 
-			<?php if ($this->session->userdata('logged_in')):?>
-			<ul id="submenu">
-				<li><a href="<?php echo site_url('help')?>" class="submenu_link help"><?php echo $this->lang->line('menu_help');?></a></li>
-				<li><a href="<?php echo site_url('logout/confirm')?>" class="submenu_link logout lbOn"><?php echo $this->lang->line('menu_logout');?></a></li>
-			</ul>
-			<?php endif;?>
+      <?php if ($this->session->userdata('logged_in')):?>
+      <ul id="submenu">
+        <li><a href="<?php echo site_url('help')?>" class="submenu_link help"><?php echo $this->lang->line('menu_help');?></a></li>
+        <li><a href="<?php echo site_url('logout/confirm')?>" class="submenu_link logout lbOn"><?php echo $this->lang->line('menu_logout');?></a></li>
+      </ul>
+      <?php endif;?>
 
-		</div>
+    </div>
 
-		<div id="invoice_action_menu">
-		<ul>
+    <div id="invoice_action_menu">
+    <ul>
 
-		<?php if ($this->session->userdata('logged_in')): ?>
+    <?php if ($this->session->userdata('logged_in')): ?>
 
-			<h3>Navigation</h3>
-			<li><?php echo anchor('', $this->lang->line('menu_root_system'), array('class' => 'dashboard'));?></li>
-			<li><?php echo anchor('invoices', $this->lang->line('menu_invoice_summary'), array('class' => 'summaryinv'));?></li>
+      <h3>Navigation</h3>
+      <li><?php echo anchor('', $this->lang->line('menu_root_system'), array('class' => 'dashboard'));?></li>
+      <li><?php echo anchor('invoices', $this->lang->line('menu_invoice_summary'), array('class' => 'summaryinv'));?></li>
 
-			<?php if (isset($clientList)): ?>
-				<h3>Actions</h3>
-				<li><?php echo anchor('invoices/newinvoice_first', $this->lang->line('menu_new_invoice'), array('class' => 'addinv createInvoice', 'id' => 'addinv'));?></li>
-			<?php endif; ?>
+      <?php if (isset($clientList)): ?>
+        <h3>Actions</h3>
+        <li><?php echo anchor('invoices/newinvoice_first', $this->lang->line('menu_new_invoice'), array('class' => 'addinv createInvoice', 'id' => 'addinv'));?></li>
+      <?php endif; ?>
 
-			<?php if (isset($invoiceOptions)): ?>
-				<h3>Quote Actions</h3>
-				<li><?php echo anchor('invoices/view/' . $row->id . '/quote', $this->lang->line('menu_view_quote'), array('class' => 'summaryinv'));?></li>
-				<li id="invemailquoteli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailQuote', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_quote');?></a></li>
-				<li><?php echo anchor('invoices/pdf/' . $row->id . '/quote', $this->lang->line('menu_generate_quote_pdf'), array('class' => 'emailpdf'));?></li>
+      <?php if (isset($invoiceOptions)): ?>
+        <h3>Quote Actions</h3>
+        <li><?php echo anchor('invoices/view/' . $row->id . '/quote', $this->lang->line('menu_view_quote'), array('class' => 'summaryinv'));?></li>
+        <li id="invemailquoteli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailQuote', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_quote');?></a></li>
+        <li><?php echo anchor('invoices/pdf/' . $row->id . '/quote', $this->lang->line('menu_generate_quote_pdf'), array('class' => 'emailpdf'));?></li>
 
-				<h3>Invoice Actions</h3>
-				<li><?php echo anchor('invoices/view/' . $row->id, $this->lang->line('menu_view_invoice'), array('class' => 'summaryinv'));?></li>
-				<li id="invemailli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailInvoice', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_invoice');?></a></li>
-				<li><?php echo anchor('invoices/pdf/' . $row->id, $this->lang->line('menu_generate_pdf'), array('class' => 'emailpdf'));?></li>
+        <h3>Invoice Actions</h3>
+        <li><?php echo anchor('invoices/view/' . $row->id, $this->lang->line('menu_view_invoice'), array('class' => 'summaryinv'));?></li>
+        <li id="invemailli"><a class="invemail" href="javascript:void(0);" onclick="Effect.BlindDown('emailInvoice', {duration: '0.4'});"><?php echo $this->lang->line('menu_email_invoice');?></a></li>
+        <li><?php echo anchor('invoices/pdf/' . $row->id, $this->lang->line('menu_generate_pdf'), array('class' => 'emailpdf'));?></li>
 
-				<h3>Other Actions</h3>
-				<?php if ($row->amount_paid < $row->total_with_tax): ?>
-					<li><?php echo anchor('invoices/edit/'.$row->id, $this->lang->line('menu_edit'), array('class' => 'invedit'));?></li>
-				<?php endif; ?>
+        <h3>Other Actions</h3>
+        <?php if ($row->amount_paid < $row->total_with_tax): ?>
+          <li><?php echo anchor('invoices/edit/'.$row->id, $this->lang->line('menu_edit'), array('class' => 'invedit'));?></li>
+        <?php endif; ?>
 
-				<li id="invprintli"><?php echo anchor('', $this->lang->line('menu_print'), array('class' => 'invprint', 'onclick' => 'print(); return false;'));?></li>
+        <li id="invprintli"><?php echo anchor('', $this->lang->line('menu_print'), array('class' => 'invprint', 'onclick' => 'print(); return false;'));?></li>
 
-				<?php if ($row->amount_paid < $row->total_with_tax): ?>
-					<li id="invpayli"><a class="invpayment" href="javascript:void(0);" onclick="Effect.BlindDown('enterPayment', {duration: '0.4'});"><?php echo $this->lang->line('menu_enter_payment');?></a></li>
-				<?php endif; ?>
+        <?php if ($row->amount_paid < $row->total_with_tax): ?>
+          <li id="invpayli"><a class="invpayment" href="javascript:void(0);" onclick="Effect.BlindDown('enterPayment', {duration: '0.4'});"><?php echo $this->lang->line('menu_enter_payment');?></a></li>
+        <?php endif; ?>
 
-				<li id="invnoteli"><a class="invnote" href="javascript:void(0);" onclick="Effect.BlindDown('private_note_form', {duration: '0.4'});"><?php echo $this->lang->line('menu_private_note');?></a></li>
-				<li><?php echo anchor('invoices/duplicate/'.$row->id, $this->lang->line('menu_duplicate'), array('class' => 'invduplicate'));?></li>
-				<li><?php echo anchor('invoices/delete/'.$row->id, $this->lang->line('menu_delete'), array('class'=>'lbOn deleteConfirm'));?></li>
+        <li id="invnoteli"><a class="invnote" href="javascript:void(0);" onclick="Effect.BlindDown('private_note_form', {duration: '0.4'});"><?php echo $this->lang->line('menu_private_note');?></a></li>
+        <li><?php echo anchor('invoices/duplicate/'.$row->id, $this->lang->line('menu_duplicate'), array('class' => 'invduplicate'));?></li>
+        <li><?php echo anchor('invoices/delete/'.$row->id, $this->lang->line('menu_delete'), array('class'=>'lbOn deleteConfirm'));?></li>
 
-			<?php endif; ?>
+      <?php endif; ?>
 
-		<?php else: ?>
+    <?php else: ?>
 
-		<li class="menu_promo"><?php echo $this->lang->line('menu_catchphrase');?></li>
+    <li class="menu_promo"><?php echo $this->lang->line('menu_catchphrase');?></li>
 
-		<?php endif; ?>
+    <?php endif; ?>
 
-		</ul>
-		<?php
-		$quotes = $this->lang->line('menu_did_you_know_quotes');
-		echo '<p id="tip"><strong>' . $this->lang->line('menu_did_you_know') . '</strong><br />' . $quotes[array_rand($quotes)] . '</p>';
-		?>
-		</div>
-		<div id="main_content">
+    </ul>
+    <?php
+    $quotes = $this->lang->line('menu_did_you_know_quotes');
+    echo '<p id="tip"><strong>' . $this->lang->line('menu_did_you_know') . '</strong><br />' . $quotes[array_rand($quotes)] . '</p>';
+    ?>
+    </div>
+    <div id="main_content">
 
-		<?php if ($this->session->userdata('logged_in') && isset($status_menu)):?>
-		<ul id="invoice_status_menu">
-			<li><?php echo anchor('invoices', $this->lang->line('invoice_summary'));?></li>
-			<li><?php echo anchor('invoices/overdue', $this->lang->line('invoice_overdue'));?></li>
-			<li><?php echo anchor('invoices/open', $this->lang->line('invoice_open'));?></li>
-			<li><?php echo anchor('invoices/closed', $this->lang->line('invoice_closed'));?></li>
-			<li><?php echo anchor('invoices/all', $this->lang->line('invoice_all_invoices'));?></li>
-		</ul>
-		<?php endif; ?>
+    <?php if ($this->session->userdata('logged_in') && isset($status_menu)):?>
+    <ul id="invoice_status_menu">
+      <li><?php echo anchor('invoices', $this->lang->line('invoice_summary'));?></li>
+      <li><?php echo anchor('invoices/overdue', $this->lang->line('invoice_overdue'));?></li>
+      <li><?php echo anchor('invoices/open', $this->lang->line('invoice_open'));?></li>
+      <li><?php echo anchor('invoices/closed', $this->lang->line('invoice_closed'));?></li>
+      <li><?php echo anchor('invoices/all', $this->lang->line('invoice_all_invoices'));?></li>
+    </ul>
+    <?php endif; ?>

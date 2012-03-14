@@ -261,13 +261,13 @@ $lang['utilities_version_check'] = "Procurar novas vers&otilde;es";
 $lang['utilities_version_undetermined'] = "O estado das vers&otilde;es n&atilde;o pode ser determinado.";
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE tem foruns em forums.bambooinvoice.org para suporte, pedidos de novas funcionalidades, e para conversa.",
-					"BambooINVOICE &eacute; publicado usando a licen&ccedil;a GPL.",
-					"As defini&ccedil;&otilde;es podem ser alteradas a qualquer momento na op&ccedil;&atilde;o &ldquo;Defini&ccedil;&otilde;es&rdquo; do menu principal.",
-					"O ficheiro de ajuda cresce diariamente.  Visite BambooINVOICE.org para a vers&atilde;o mais recente!",
-					"Pode inserir um cliente novo na op&ccedil;&atilde;o &ldquo;Clientes&rdquo; do menu principal ou imediatamente antes de inserir uma factura!",
-					"Uma haste de bambu de um sistema bem enraizado alcan&ccedil;a geralmente a altura m&aacute;xima em apenas um ano!",
-					"A longa vida da planta de bambu &eacute; a raz&atilde;o de ser um s&iacute;mbolo Chin&ecirc;s de longa vida, e de amizade na &Iacute;ndia."
-					);
+          "BambooINVOICE tem foruns em forums.bambooinvoice.org para suporte, pedidos de novas funcionalidades, e para conversa.",
+          "BambooINVOICE &eacute; publicado usando a licen&ccedil;a GPL.",
+          "As defini&ccedil;&otilde;es podem ser alteradas a qualquer momento na op&ccedil;&atilde;o &ldquo;Defini&ccedil;&otilde;es&rdquo; do menu principal.",
+          "O ficheiro de ajuda cresce diariamente.  Visite BambooINVOICE.org para a vers&atilde;o mais recente!",
+          "Pode inserir um cliente novo na op&ccedil;&atilde;o &ldquo;Clientes&rdquo; do menu principal ou imediatamente antes de inserir uma factura!",
+          "Uma haste de bambu de um sistema bem enraizado alcan&ccedil;a geralmente a altura m&aacute;xima em apenas um ano!",
+          "A longa vida da planta de bambu &eacute; a raz&atilde;o de ser um s&iacute;mbolo Chin&ecirc;s de longa vida, e de amizade na &Iacute;ndia."
+          );
 
 ?>

@@ -4,12 +4,12 @@
  *
  * An open source application development framework for PHP 4.3.2 or newer
  *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2009, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 1.3
+ * @package    CodeIgniter
+ * @author    ExpressionEngine Dev Team
+ * @copyright  Copyright (c) 2008 - 2009, EllisLab, Inc.
+ * @license    http://codeigniter.com/user_guide/license.html
+ * @link    http://codeigniter.com
+ * @since    Version 1.3
  * @filesource
  */
 
@@ -32,36 +32,36 @@
  * Since PHP 5 doesn't suffer from this problem so we load one of
  * two files based on the version of PHP being run.
  *
- * @package		CodeIgniter
- * @subpackage	codeigniter
- * @category	front-controller
- * @author		ExpressionEngine Dev Team
- * @link		http://codeigniter.com/user_guide/
+ * @package    CodeIgniter
+ * @subpackage  codeigniter
+ * @category  front-controller
+ * @author    ExpressionEngine Dev Team
+ * @link    http://codeigniter.com/user_guide/
  */
  class CI_Base extends CI_Loader {
 
-	function CI_Base()
-	{
-		// This allows syntax like $this->load->foo() to work
-		parent::CI_Loader();
-		$this->load =& $this;
-		
-		// This allows resources used within controller constructors to work
-		global $OBJ;
-		$OBJ = $this->load; // Do NOT use a reference.
-	}
+  function CI_Base()
+  {
+    // This allows syntax like $this->load->foo() to work
+    parent::CI_Loader();
+    $this->load =& $this;
+    
+    // This allows resources used within controller constructors to work
+    global $OBJ;
+    $OBJ = $this->load; // Do NOT use a reference.
+  }
 }
 
 function &get_instance()
 {
-	global $CI, $OBJ;
-	
-	if (is_object($CI))
-	{
-		return $CI;
-	}
-	
-	return $OBJ->load;
+  global $CI, $OBJ;
+  
+  if (is_object($CI))
+  {
+    return $CI;
+  }
+  
+  return $OBJ->load;
 }
 
 

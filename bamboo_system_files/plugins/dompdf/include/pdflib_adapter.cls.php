@@ -197,10 +197,10 @@ class PDFLib_Adapter implements Canvas {
 
     $this->_pdf = new PDFLib();
 
-	if ( defined("DOMPDF_PDFLIB_LICENSE") )
+  if ( defined("DOMPDF_PDFLIB_LICENSE") )
       $this->_pdf->set_parameter( "license", DOMPDF_PDFLIB_LICENSE);
 
-	$this->_pdf->set_parameter("textformat", "utf8");
+  $this->_pdf->set_parameter("textformat", "utf8");
     $this->_pdf->set_parameter("fontwarning", "false");
 
     $this->_pdf->set_info("Creator", "DOMPDF Converter");
@@ -475,7 +475,7 @@ class PDFLib_Adapter implements Canvas {
    */
   protected function _set_stroke_color($color) {
     if($this->_last_stroke_color == $color)
-    	return;
+      return;
 
     $this->_last_stroke_color = $color;
 
@@ -490,7 +490,7 @@ class PDFLib_Adapter implements Canvas {
    */
   protected function _set_fill_color($color) {
     if($this->_last_fill_color == $color)
-    	return;
+      return;
 
     $this->_last_fill_color = $color;
 

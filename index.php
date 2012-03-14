@@ -2,7 +2,7 @@
 
 if (floor(phpversion()) < 5)
 {
-	die('BambooInvoice requires PHP version 5 or higher.  After you have satisfied this, you can try re-installing.');
+  die('BambooInvoice requires PHP version 5 or higher.  After you have satisfied this, you can try re-installing.');
 }
 
 
@@ -16,8 +16,8 @@ if (floor(phpversion()) < 5)
 | For more info visit:  http://www.php.net/error_reporting
 |
 */
-//	error_reporting(0);
-	error_reporting(E_ALL);
+//  error_reporting(0);
+  error_reporting(E_ALL);
 
 /*
 |---------------------------------------------------------------
@@ -31,7 +31,7 @@ if (floor(phpversion()) < 5)
 | NO TRAILING SLASH!
 |
 */
-	$system_folder = "bamboo_system_files";
+  $system_folder = "bamboo_system_files";
 
 
 /*
@@ -49,7 +49,7 @@ if (floor(phpversion()) < 5)
 | NO TRAILING SLASH!
 |
 */
-	$application_folder = "application";
+  $application_folder = "application";
 
 
 /*
@@ -70,7 +70,7 @@ if (floor(phpversion()) < 5)
 */
 if (function_exists('realpath') AND @realpath(dirname(__FILE__)) !== FALSE)
 {
-	$system_folder = str_replace("\\", "/", realpath(dirname(__FILE__))).'/'.$system_folder;
+  $system_folder = str_replace("\\", "/", realpath(dirname(__FILE__))).'/'.$system_folder;
 }
 
 /*
@@ -78,11 +78,11 @@ if (function_exists('realpath') AND @realpath(dirname(__FILE__)) !== FALSE)
 | DEFINE APPLICATION CONSTANTS
 |---------------------------------------------------------------
 |
-| EXT		- The file extension.  Typically ".php"
-| FCPATH	- The full server path to THIS file
-| SELF		- The name of THIS file (typically "index.php)
-| BASEPATH	- The full server path to the "system" folder
-| APPPATH	- The full server path to the "application" folder
+| EXT    - The file extension.  Typically ".php"
+| FCPATH  - The full server path to THIS file
+| SELF    - The name of THIS file (typically "index.php)
+| BASEPATH  - The full server path to the "system" folder
+| APPPATH  - The full server path to the "application" folder
 |
 */
 define('EXT', '.'.pathinfo(__FILE__, PATHINFO_EXTENSION));
@@ -92,16 +92,16 @@ define('BASEPATH', $system_folder.'/');
 
 if (is_dir($application_folder))
 {
-	define('APPPATH', $application_folder.'/');
+  define('APPPATH', $application_folder.'/');
 }
 else
 {
-	if ($application_folder == '')
-	{
-		$application_folder = 'application';
-	}
+  if ($application_folder == '')
+  {
+    $application_folder = 'application';
+  }
 
-	define('APPPATH', BASEPATH.$application_folder.'/');
+  define('APPPATH', BASEPATH.$application_folder.'/');
 }
 
 /*
@@ -116,7 +116,7 @@ else
 */
 if ( ! defined('E_STRICT'))
 {
-	define('E_STRICT', 2048);
+  define('E_STRICT', 2048);
 }
 
 /*

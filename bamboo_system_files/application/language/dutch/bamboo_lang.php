@@ -256,12 +256,12 @@ $lang['utilities_version_check'] = "Controle voor nieuwe versie";
 $lang['utilities_version_undetermined'] = "Kon geen versie status achterhalen.";
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE is uitgebracht onder de GPL license.",
-					"Uw instellingen kunnen te allen tijde worden gewijzigd in het &ldquo;instellingen&rdquo; menu.",
-					"Het help bestand is nog groeiende. Bezoek BambooINVOICE.org voor de laatste versie!",
-					"U kunt een nieuwe klant aanmaken vanuit het &ldquo;klanten&rdquo; menu, of vlak voordat u een factuur aanmaakt!",
-					"Een enkele stam bamboe, geplant als klein plantje, bereikt zijn ultieme hoogte in minder dan een jaar!",
-					"De bamboe plant zijn lange leven is in China een symbool voor lang leven. In India is het een symbool voor vriendschap."
-					);
+          "BambooINVOICE is uitgebracht onder de GPL license.",
+          "Uw instellingen kunnen te allen tijde worden gewijzigd in het &ldquo;instellingen&rdquo; menu.",
+          "Het help bestand is nog groeiende. Bezoek BambooINVOICE.org voor de laatste versie!",
+          "U kunt een nieuwe klant aanmaken vanuit het &ldquo;klanten&rdquo; menu, of vlak voordat u een factuur aanmaakt!",
+          "Een enkele stam bamboe, geplant als klein plantje, bereikt zijn ultieme hoogte in minder dan een jaar!",
+          "De bamboe plant zijn lange leven is in China een symbool voor lang leven. In India is het een symbool voor vriendschap."
+          );
 
 ?>

@@ -248,12 +248,12 @@ $lang['utilities_version_check'] = "New version check"; // to be translated
 $lang['utilities_version_undetermined'] = "Version status could not be determined."; // to be translated
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE este lansat sub licenţă GPL.",
-					"Puteţi să schimbaţi setările dumneavoastră oricând din meniul &ldquo;Setări&rdquo;.",
-					"Manualul de ajutor se dezvoltă în fiecare zi. Vizitaţi BambooINVOICE.org pentru cea mai nouă versiune!",
-					"Puteţi crea un nou client din meniul &ldquo;Clienţi&rdquo;, sau chiar înainte de a emite o factură!",
-					"Un fir de bambus dintr-un sistem de bază ajunge la înăltimea maximă în doar un an!",
-					"Viaţa indelungată a plantei de bambus este motivul pentru care a devenit smbolul chinezesc pentru longevitate si simbolul indian al prieteniei adevărate."
-					);
+          "BambooINVOICE este lansat sub licenţă GPL.",
+          "Puteţi să schimbaţi setările dumneavoastră oricând din meniul &ldquo;Setări&rdquo;.",
+          "Manualul de ajutor se dezvoltă în fiecare zi. Vizitaţi BambooINVOICE.org pentru cea mai nouă versiune!",
+          "Puteţi crea un nou client din meniul &ldquo;Clienţi&rdquo;, sau chiar înainte de a emite o factură!",
+          "Un fir de bambus dintr-un sistem de bază ajunge la înăltimea maximă în doar un an!",
+          "Viaţa indelungată a plantei de bambus este motivul pentru care a devenit smbolul chinezesc pentru longevitate si simbolul indian al prieteniei adevărate."
+          );
 
 ?>

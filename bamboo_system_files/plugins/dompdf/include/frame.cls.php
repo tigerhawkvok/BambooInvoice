@@ -167,13 +167,13 @@ class Frame {
     $this->_decorator = null;
 
 //    $this->set_id( uniqid(rand()) );
-	global $dompdf_unique_id;
-	if (isset($dompdf_unique_id)){
-	    $dompdf_unique_id++;
-	}else{
-	    $dompdf_unique_id = 1;
-	}
-	$this->set_id( $dompdf_unique_id );
+  global $dompdf_unique_id;
+  if (isset($dompdf_unique_id)){
+      $dompdf_unique_id++;
+  }else{
+      $dompdf_unique_id = 1;
+  }
+  $this->set_id( $dompdf_unique_id );
 
   }
 

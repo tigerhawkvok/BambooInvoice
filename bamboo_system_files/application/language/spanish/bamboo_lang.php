@@ -263,11 +263,11 @@ $lang['utilities_version_check'] = "Buscar nueva versión";
 $lang['utilities_version_undetermined'] = "El estado de la versión no puede ser determinado."; 
 
 $lang['menu_did_you_know_quotes'] = array(
-					"BambooINVOICE es distribuido bajo licencia GPL.",
-					"Tu configuración puede ser cambiada en cualquier momento usando el menú &ldquo;Configuración&rdquo;.",
-					"Los archivos de ayuda siguen creciendo dia a dia. Visita BambooINVOICE.org para consultar la ultima version!",
-					"Puedes crear un cliente nuevo usando el menu &ldquo;clientes&rdquo; o tambien justo antes de emitir una nueva factura!",
-					"Un simple gajo de bambu de un sistema de raiz establecida puede llegar a una altura total en solo un año!",
-					"La larga vida del bambo hace que sea el simbolo chino de una vida larga. En India es el simbolo de la amistad."
-					);
+          "BambooINVOICE es distribuido bajo licencia GPL.",
+          "Tu configuración puede ser cambiada en cualquier momento usando el menú &ldquo;Configuración&rdquo;.",
+          "Los archivos de ayuda siguen creciendo dia a dia. Visita BambooINVOICE.org para consultar la ultima version!",
+          "Puedes crear un cliente nuevo usando el menu &ldquo;clientes&rdquo; o tambien justo antes de emitir una nueva factura!",
+          "Un simple gajo de bambu de un sistema de raiz establecida puede llegar a una altura total en solo un año!",
+          "La larga vida del bambo hace que sea el simbolo chino de una vida larga. En India es el simbolo de la amistad."
+          );
 ?>
