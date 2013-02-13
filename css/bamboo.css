@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300&subset=latin,latin-ext);
+
+
 /*
 * control panel
 */
@@ -12,13 +15,24 @@
 	text-decoration: none;
 	width: 90px;
 	height: 60px;
-	padding-left: 80px;
-	padding-top: 15px;
+	padding-left: 105px;
+	padding-top: 35px;
 	font-weight: bold;
 	color: #5E88B6;
+	font-size: 17px;
+	border: 1px solid #ccc;
+	box-shadow: inset 0px 0px 17px 8px #ddd;
+	transition: border 2s, box-shadow 2s;
+	-moz-transition: border 2s, box-shadow 2s; /* Firefox 4 */
+	-webkit-transition: border 2s, box-shadow 2s; /* Safari and Chrome */
+	-o-transition: border 2s, box-shadow 2s; /* Opera */
+
+	border-radius: 10px;
 }
 .control_panel a:hover {
-	color: #003570;
+	color: #003578;
+	border: 1px solid #003578;
+	box-shadow: inset 0px 0px 17px 8px #345899;
 }
 .control_panel .root_invoices {
 	background: url(../img/root_sys_invoices.png) no-repeat center center;
@@ -55,7 +69,7 @@
 * Global text styles
 */
 a {
-	color: #5E88B6;
+	color: #DC647F;
 }
 a:hover {
 	text-decoration: none;
@@ -66,11 +80,11 @@ a:hover {
 	outline: none;
 }
 h1, h2, h3 {
-	color: #5E88B6;
+	color: #DC647F;
 	font-weight: normal;
 }
 h4, h5, h6 {
-	color: #5E88B6;
+	color: #DC647F;
 }
 h2 {
 	margin: 0 auto;
@@ -84,7 +98,8 @@ body {
 
 	background: url(../img/menu_side.png) repeat-y;
 
-	font-family: Helvetica, Arial, Verdana, sans-serif; /*Trebuchet MS,*/
+	/*font-family: Helvetica, Arial, Verdana, sans-serif; Trebuchet MS,*/
+	font-family: 'Roboto', sans-serif;
 }
 ul {
 	list-style: url(../img/bullet.gif) none;

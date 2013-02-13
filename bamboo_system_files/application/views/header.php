@@ -13,7 +13,7 @@ header('Content-Type: text/html; Charset=UTF-8');
 	and no, I'm not very impressed by your work. And for the love of Pete, don't come to my blog and forums bragging
 	about your "improvements" to Bamboo please.
 */
-echo 'Bam'.'boo'.'In'.'voice'; // this is like this so that nobody can get it by a search and replace
+echo 'BorealInvoices - fork of BambooInvoices'; // this is like this so that nobody can get it by a search and replace
 /**
 	Several times now I've had people take my work, strip out the word "bamboo" and rename it something else - then 
 	claim they have written their own "invoicing software".  As a developer, this sucks.  Usually its a dumb search 
@@ -34,8 +34,8 @@ echo ': '.$page_title;
 ?></title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="author" content="Derek Allard - http://www.derekallard.com" />
-<meta name="description" content="BambooInvoice : Simple, Open Source, Online Invoicing" />
-<meta name="keywords" content="BambooInvoice, Online Invoicing" />
+<meta name="description" content="BorealInvoices" />
+<meta name="keywords" content="BorealInvoices, Online Invoicing" />
 <?php if ($this->settings_model->get_setting('demo_flag') == 'y'):?>
 <meta name="robots" content="all" />
 <?php else :?>

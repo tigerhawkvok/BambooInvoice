@@ -46,27 +46,22 @@ if (isset($total_rows) && $total_rows == 0):
 	<tr>
 		<td><?php echo anchor('invoices/view/'.$row->id, $row->invoice_number);?></td>
 		<td><?php echo anchor('invoices/view/'.$row->id, $display_date);?></td>
-		<td class="cName"><?php echo anchor('invoices/view/'.$row->id, $row->name);?> <span class="short_description"><?php echo $short_description[$row->id]?></span></td>
+		<td class="cName"><?php echo anchor('invoices/view/'.$row->id, $row->name);?> <span class="short_description"><?php echo '['.$row->invoice_note.']'.$short_description[$row->id]?></span></td>
 		<td><?php echo anchor('invoices/view/'.$row->id, $this->settings_model->get_setting('currency_symbol') . number_format($row->subtotal, 2, $this->config->item('currency_decimal'), ''));?></td>
 		<td>
 		<?php
-		if ($row->amount_paid >= ($row->subtotal + .01))
-		{
-		// paid invoices
-		echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_closed'), array('title' => 'invoice status'));
-		}
-		elseif (mysql_to_unix($row->dateIssued) >= strtotime('-'.$this->settings_model->get_setting('days_payment_due'). ' days')) 
-		{
-		// owing less then the overdue days amount
-		echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_open'), array('title' => 'invoice status'));
-		}
-		else
-		{ 
-		// owing more then the overdue days amount
-		// convert days due into a timestamp, and add the days payement is due in seconds
-		$due_date = mysql_to_unix($row->dateIssued) + ($this->settings_model->get_setting('days_payment_due') * 60*60*24); 
-		$line = "<span class='error'>" . timespan($due_date, now()) . ' '.$this->lang->line('invoice_overdue').'</span>';
-		echo anchor('invoices/view/'.$row->id, $line, array('title' => 'invoice status'));
+		if ($row->amount_paid >= ($row->subtotal + .01)){
+			// paid invoices
+			echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_closed'), array('title' => 'invoice status'));
+		}elseif (mysql_to_unix($row->dateIssued) >= strtotime('-'.$this->settings_model->get_setting('days_payment_due'). ' days')) {
+			// owing less then the overdue days amount
+			echo anchor('invoices/view/'.$row->id, $this->lang->line('invoice_open'), array('title' => 'invoice status'));
+		}else{ 
+			// owing more then the overdue days amount
+			// convert days due into a timestamp, and add the days payement is due in seconds
+			$due_date = mysql_to_unix($row->dateIssued) + ($this->settings_model->get_setting('days_payment_due') * 60*60*24); 
+			$line = "<span class='error'>" . timespan($due_date, now()) . ' '.$this->lang->line('invoice_overdue').'</span>';
+			echo anchor('invoices/view/'.$row->id, $line, array('title' => 'invoice status'));
 		}
 		?>
 		</td>
