@@ -13,47 +13,47 @@
 .control_panel a {
 	display: block;
 	text-decoration: none;
-	width: 90px;
+	width: 120px;
 	height: 60px;
 	padding-left: 105px;
 	padding-top: 35px;
 	font-weight: bold;
 	color: #5E88B6;
 	font-size: 17px;
-	border: 1px solid #ccc;
-	box-shadow: inset 0px 0px 17px 8px #ddd;
-	transition: border 2s, box-shadow 2s;
-	-moz-transition: border 2s, box-shadow 2s; /* Firefox 4 */
-	-webkit-transition: border 2s, box-shadow 2s; /* Safari and Chrome */
-	-o-transition: border 2s, box-shadow 2s; /* Opera */
+	border: 1px solid #ddd;
+	box-shadow: inset 0px 0px 17px 8px #f2f2f2;
+	transition: border 2s, box-shadow 1s;
+	-moz-transition: border 2s, box-shadow 1s; /* Firefox 4 */
+	-webkit-transition: border 2s, box-shadow 1s; /* Safari and Chrome */
+	-o-transition: border 2s, box-shadow 1s; /* Opera */
 
 	border-radius: 10px;
 }
 .control_panel a:hover {
 	color: #003578;
-	border: 1px solid #003578;
-	box-shadow: inset 0px 0px 17px 8px #345899;
+	border: 1px solid #B8DC3C;
+	box-shadow: inset 0px 0px 17px 8px #B8DC3C;
 }
 .control_panel .root_invoices {
-	background: url(../img/root_sys_invoices.png) no-repeat center center;
+	background: url(../img/root_sys_invoices.png) no-repeat left center;
 }
 .control_panel .root_clients {
-	background: url(../img/root_sys_clients.png) no-repeat center center;
+	background: url(../img/root_sys_clients.png) no-repeat left center;
 }
 .control_panel .root_reports {
-	background: url(../img/root_sys_reports.png) no-repeat center center;
+	background: url(../img/root_sys_reports.png) no-repeat left center;
 }
 .control_panel .root_search {
-	background: url(../img/root_sys_search.png) no-repeat center center;
+	background: url(../img/root_sys_search.png) no-repeat left center;
 }
 .control_panel .root_settings {
-	background: url(../img/root_sys_settings.png) no-repeat center center;
+	background: url(../img/root_sys_settings.png) no-repeat left center;
 }
 .control_panel .root_utilities {
-	background: url(../img/root_sys_utilities.png) no-repeat center center;
+	background: url(../img/root_sys_utilities.png) no-repeat left center;
 }
 .control_panel .root_help {
-	background: url(../img/root_sys_help.png) no-repeat center center;
+	background: url(../img/root_sys_help.png) no-repeat left center;
 }
 .control_panel li {
 	margin: 10px;
@@ -146,6 +146,8 @@ input {
 	float: left;
 	color: #FFF;
 	background: url(../img/bamboo_logo.png) no-repeat left top;
+	margin-left: 20px;
+	margin-top: 10px;
 }
 #bamboo_logo a {
 	display: block;
@@ -198,7 +200,6 @@ input {
 	width: 200px;
 	margin-top: -38px;
 	padding:32px 0;
-	background: url(../img/menu_top.png) no-repeat left top;
 	float: left;
 }
 #invoice_action_menu p {
@@ -209,7 +210,7 @@ input {
 	padding: 0;
 }
 #invoice_action_menu li {
-	background: url(../img/menu_tab.png) no-repeat left center;
+	background: #E8243C;
 	line-height: 26px;
 	margin-bottom: 10px;
 }
@@ -218,7 +219,7 @@ input {
 	line-height: 26px;
 	text-decoration: none;
 	padding-left: 26px;
-	color: #1FA395;
+	color: #fff;
 	font-size: large;
 	margin: 0;
 	width: 164px; /* IE doesn't recognize the 100% nature of block */
@@ -331,7 +332,7 @@ input {
 }
 .stripe th, .close {
 	color: #FFFFFF!important;
-	background: url(../img/grey_stripe_tile.jpg);
+	background: #214F69;
 	padding: 0;
 	text-align: center;
 	font-weight: bold;
@@ -485,7 +486,7 @@ fieldset input {
 }
 .invoice_items th {
 	color: #FFFFFF!important;
-	background: url(../img/grey_stripe_tile.jpg);
+	background: #214F69;
 	padding: 3px;
 	text-align: left;
 	font-weight: bold;

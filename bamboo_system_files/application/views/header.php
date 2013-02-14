@@ -141,7 +141,7 @@ lang_amount = new String("<?php echo ($this->lang->line('invoice_amount'));?>");
 		</ul>
 		<?php
 		$quotes = $this->lang->line('menu_did_you_know_quotes');
-		echo '<p id="tip"><strong>' . $this->lang->line('menu_did_you_know') . '</strong><br />' . $quotes[array_rand($quotes)] . '</p>';
+		#echo '<p id="tip"><strong>' . $this->lang->line('menu_did_you_know') . '</strong><br />' . $quotes[array_rand($quotes)] . '</p>';
 		?>
 		</div>
 		<div id="main_content">
