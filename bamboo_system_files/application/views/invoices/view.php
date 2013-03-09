@@ -186,6 +186,10 @@ if ($row->amount_paid < $row->total_with_tax):
 		(<?php echo $date_invoice_due;?>)
 	</p>
 
+	<p>
+		<strong>Recur interval: <?php echo $row->recur_interval; ?> Day(s)</strong>
+		(<?php echo date('F j, Y', strtotime($date_invoice_issued) + ($row->recur_interval * 24 * 60 * 60)); ?>)
+	</p>
 	<?php if ($companyInfo->tax_code != ''):?>
 	<p><?php echo $companyInfo->tax_code;?></p>
 	<?php endif;?>

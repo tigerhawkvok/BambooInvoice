@@ -211,7 +211,8 @@ class Invoices extends MY_Controller {
 									'tax1_rate' => $this->input->post('tax1_rate'),
 									'tax2_desc' => $this->input->post('tax2_description'),
 									'tax2_rate' => $this->input->post('tax2_rate'),
-									'invoice_note' => $this->input->post('invoice_note')
+									'invoice_note' => $this->input->post('invoice_note'),
+									'recur_interval' => $this->input->post('recur_interval')
 								);
 
 			$invoice_id = $this->invoices_model->addInvoice($invoice_data);
@@ -393,7 +394,8 @@ class Invoices extends MY_Controller {
 											'tax1_rate' 		=> $this->input->post('tax1_rate'),
 											'tax2_desc' 		=> $this->input->post('tax2_description'),
 											'tax2_rate' 		=> $this->input->post('tax2_rate'),
-											'invoice_note' 		=> $this->input->post('invoice_note')
+											'invoice_note' 		=> $this->input->post('invoice_note'),
+											'recur_interval' 	=> $this->input->post('recur_interval')
 									);
 
 				$invoice_id = $this->invoices_model->updateInvoice($this->input->post('id'), $invoice_data);
@@ -506,7 +508,9 @@ class Invoices extends MY_Controller {
 										'tax1_rate' => $this->input->post('tax1_rate'),
 										'tax2_desc' => $this->input->post('tax2_description'),
 										'tax2_rate' => $this->input->post('tax2_rate'),
-										'invoice_note' => $this->input->post('invoice_note')
+										'invoice_note' => $this->input->post('invoice_note'),
+										'recur_interval' => $this->input->post('recur_interval')
+
 									);
 
 				$invoice_id = $this->invoices_model->addInvoice($invoice_data);
@@ -577,6 +581,7 @@ class Invoices extends MY_Controller {
 		$this->load->model('clientcontacts_model');
 		$this->load->model('invoice_histories_model', '', TRUE);
 		$data['page_title'] = 'invoice';
+		$data['id'] = $id;
 
 		// configure email to be sent
 		$data['companyInfo'] = $this->settings_model->getCompanyInfo()->row();
@@ -668,7 +673,7 @@ class Invoices extends MY_Controller {
 		{
 			$this->email->bcc($data['companyInfo']->primary_contact_email);
 		}
-
+		
 		$email_body = $this->input->post('email_body');
 
 		$this->email->from($data['companyInfo']->primary_contact_email, $data['companyInfo']->primary_contact);
@@ -717,6 +722,8 @@ class Invoices extends MY_Controller {
 		$this->lang->load('date');
 		$this->load->plugin('to_pdf');
 		$this->load->helper('file');
+		
+		$data['id'] = $id;
 
 		$data['page_title'] = $this->lang->line('menu_invoices');
 
@@ -969,7 +976,7 @@ class Invoices extends MY_Controller {
 	function _validation()
 	{
 		$rules['client_id'] 		= 'required|numeric';
-		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[12]|alpha_dash|callback_uniqueInvoice';
+		$rules['invoice_number'] 	= 'trim|required|htmlspecialchars|max_length[255]|alpha_dash|callback_uniqueInvoice';
 		$rules['dateIssued'] 		= 'trim|htmlspecialchars|callback_dateIssued';
 		$rules['invoice_note'] 		= 'trim|htmlspecialchars|max_length[2000]';
 		$rules['tax1_description'] 	= 'trim|htmlspecialchars|max_length[50]';
