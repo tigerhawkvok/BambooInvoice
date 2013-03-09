@@ -33,18 +33,19 @@
 
 $active_group = 'default';
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'root';
-$db['default']['database'] = 'bambooinvoice';
-$db['default']['dbdriver'] = 'mysql';
-$db['default']['dbprefix'] = 'bamboo_';
-$db['default']['active_r'] = TRUE;
-$db['default']['pconnect'] = FALSE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
+include('settings.php');
 
-?>
+$db['default']['hostname'] = $hostname;
+$db['default']['username'] = $username;
+$db['default']['password'] = $password;
+$db['default']['database'] = $database;
+$db['default']['dbdriver'] = $dbdriver;
+$db['default']['dbprefix'] = $dbprefix;
+$db['default']['active_r'] = $active_r;
+$db['default']['pconnect'] = $pconnect;
+$db['default']['db_debug'] = $db_debug;
+$db['default']['cache_on'] = $cache_on;
+$db['default']['cachedir'] = $cachedir;
+$db['default']['char_set'] = $char_set;
+$db['default']['dbcollat'] = $dbcollat;
+

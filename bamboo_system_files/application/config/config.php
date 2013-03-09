@@ -1,6 +1,7 @@
 <?php  
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+include('settings.php');
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -12,7 +13,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 |	http://www.your-site.com/
 |
 */
-$config['base_url']	= 'http://localhost/bambooinvoice/';
+$config['base_url']	= $base_url;
 // This should be a full address, with a slash.  For example, here's what
 // I use on bambooinvoice.org:
 //$config['base_url']	= 'http://bambooinvoice.org/';
@@ -27,7 +28,7 @@ $config['base_url']	= 'http://localhost/bambooinvoice/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = $index_page;
 
 /*
 |--------------------------------------------------------------------------
@@ -221,7 +222,7 @@ $config['cache_path'] = '';
 | enabled you MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'bamboo_encryption_key_Gg2F5';
+$config['encryption_key'] = $encryption_key;
 
 /*
 |--------------------------------------------------------------------------
@@ -254,9 +255,9 @@ $config['sess_time_to_update'] 	= 300;
 | 'cookie_path'   =  Typically will be a forward slash
 |
 */
-$config['cookie_prefix']	= 'bamboo';
-$config['cookie_domain']	= '';
-$config['cookie_path']		= '/';
+$config['cookie_prefix']	= $cookie_prefix;
+$config['cookie_domain']	= $cookie_domain;
+$config['cookie_path']		= $cookie_path;
 
 /*
 |--------------------------------------------------------------------------
