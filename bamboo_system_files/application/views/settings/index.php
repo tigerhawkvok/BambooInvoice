@@ -143,6 +143,39 @@ $this->load->view('header');
             ?>
           </p>
 
+					
+<p>
+<label for="website"><span>Google Merchant ID</span></label>
+<?php
+                echo form_input(
+                  array(
+                    'name' 		=> 'google_merchant_id',
+                    'id'  		=> 'google_merchant_id',
+                    'value' 	=> ($this->validation->google_merchant_id) ? ($this->validation->google_merchant_id) : ($row->google_merchant_id),
+                    'maxlength' => '50'
+                  )
+                );
+echo $this->validation->google_merchant_id_error;
+?>
+</p>
+					
+<p>
+<label for="website"><span>PayPal E-Mail</span></label>
+<?php
+  echo form_input(
+    array(
+      'name' 		=> 'paypal_email',
+      'id'  		=> 'paypal_email',
+      'value' 	=> ($this->validation->paypal_email) ? ($this->validation->paypal_email) : ($row->paypal_email),
+      'maxlength' => '50'
+    )
+  );
+echo $this->validation->paypal_email_error;
+?>
+</p>
+
+
+
           <p>
             <label for="primary_contact"><span><?php echo $this->lang->line('settings_primary_contact');?></span></label>
             <?php

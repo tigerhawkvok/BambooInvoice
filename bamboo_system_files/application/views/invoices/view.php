@@ -225,7 +225,13 @@ if ($row->amount_paid < $row->total_with_tax):
   <p>
     <strong><?php echo $this->lang->line('invoice_payment_term');?>: <?php echo $this->settings_model->get_setting('days_payment_due');?> <?php echo $this->lang->line('date_days');?></strong> 
     (<?php echo $date_invoice_due;?>)
-  </p>
+      </p>
+
+<p>
+<strong>Recur interval: <?php echo $row->recur_interval; ?> Day(s)</strong>
+(<?php echo date('F j, Y', strtotime($date_invoice_issued) + ($row->recur_interval * 24 * 60 * 60)); ?>)
+	</p>
+
   <?php endif; ?>
 
   <?php if ($companyInfo->tax_code != ''):?>
@@ -290,6 +296,7 @@ if ($row->amount_paid < $row->total_with_tax):
     </ul>
 
   </div>
+
 
 <?php
 $this->load->view('footer');

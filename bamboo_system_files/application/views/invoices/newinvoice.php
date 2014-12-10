@@ -79,7 +79,8 @@ rest of the itemized items. -->
   <label><?php echo $this->lang->line('invoice_note');?> <?php echo $this->validation->invoice_note_error; ?><br />
   <textarea name="invoice_note" id="invoice_note" cols="80" rows="3"><?php echo ($this->validation->invoice_note) ? ($this->validation->invoice_note) : ($invoice_note_default);?></textarea>
   </label>
-  </p>
+    </p>
+    <p><label>Recur in <input type="text" name="recur_interval" size="2" maxlength="11"> days (leave blank to disable)</label></p>
   <p>
   <input type="submit" name="createInvoice" id="createInvoice" value="<?php echo $this->lang->line('actions_create_invoice');?>" />
   </p>

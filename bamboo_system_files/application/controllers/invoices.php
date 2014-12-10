@@ -12,7 +12,7 @@ class Invoices extends MY_Controller {
     $this->load->model('clients_model');
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function index()
   {
@@ -40,7 +40,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/index', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function overdue($offset = 0)
   {
@@ -61,7 +61,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/status_view', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function open($offset = 0)
   {
@@ -83,7 +83,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/status_view', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function closed($offset = 0)
   {
@@ -105,7 +105,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/status_view', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function all($offset = 0)
   {
@@ -127,7 +127,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/status_view', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function recalculate_items()
   {
@@ -151,7 +151,7 @@ class Invoices extends MY_Controller {
     echo '{"amount" : "'.number_format($amount, 2, $this->config->item('currency_decimal'), '').'", "tax1_amount" : "'.number_format($tax1_amount, 2, $this->config->item('currency_decimal'), '').'", "tax2_amount" : "'.number_format($tax2_amount, 2, $this->config->item('currency_decimal'), '').'", "total_amount" : "'.number_format($amount + $tax1_amount+$tax2_amount, 2, $this->config->item('currency_decimal'), '').'"}';
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function newinvoice()
   {
@@ -211,7 +211,8 @@ class Invoices extends MY_Controller {
                   'tax1_rate' => $this->input->post('tax1_rate'),
                   'tax2_desc' => $this->input->post('tax2_description'),
                   'tax2_rate' => $this->input->post('tax2_rate'),
-                  'invoice_note' => $this->input->post('invoice_note')
+                  'invoice_note' => $this->input->post('invoice_note'),
+                  'recur_interval' => $this->input->post('recur_interval')
                 );
 
       $invoice_id = $this->invoices_model->addInvoice($invoice_data);
@@ -247,7 +248,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function newinvoice_first()
   {
@@ -257,7 +258,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/newinvoice_first', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function view($id, $quote_only = FALSE)
   {
@@ -334,7 +335,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/view', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function edit($id)
   {
@@ -394,7 +395,8 @@ class Invoices extends MY_Controller {
                       'tax1_rate'     => $this->input->post('tax1_rate'),
                       'tax2_desc'     => $this->input->post('tax2_description'),
                       'tax2_rate'     => $this->input->post('tax2_rate'),
-                      'invoice_note'     => $this->input->post('invoice_note')
+                      'invoice_note'     => $this->input->post('invoice_note'),
+                      'recur_interval' => $this->input->post('recur_interval')
                   );
 
         $invoice_id = $this->invoices_model->updateInvoice($this->input->post('id'), $invoice_data);
@@ -445,7 +447,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function duplicate($id)
   {
@@ -507,7 +509,8 @@ class Invoices extends MY_Controller {
                     'tax1_rate' => $this->input->post('tax1_rate'),
                     'tax2_desc' => $this->input->post('tax2_description'),
                     'tax2_rate' => $this->input->post('tax2_rate'),
-                    'invoice_note' => $this->input->post('invoice_note')
+                    'invoice_note' => $this->input->post('invoice_note'),
+                    'recur_interval' => $this->input->post('recur_interval')
                   );
 
         $invoice_id = $this->invoices_model->addInvoice($invoice_data);
@@ -555,7 +558,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function notes($id)
   {
@@ -567,7 +570,7 @@ class Invoices extends MY_Controller {
     redirect('invoices/view/'.$id);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function email($id, $quote_only = FALSE)
   {
@@ -578,6 +581,7 @@ class Invoices extends MY_Controller {
     $this->load->model('clientcontacts_model');
     $this->load->model('invoice_histories_model', '', TRUE);
     $data['page_title'] = 'invoice';
+    $data['id'] = $id;
 
     // configure email to be sent
     $data['companyInfo'] = $this->settings_model->getCompanyInfo()->row();
@@ -722,7 +726,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function pdf($id, $quote_only = FALSE, $output = TRUE)
   {
@@ -730,6 +734,7 @@ class Invoices extends MY_Controller {
     $this->load->plugin('to_pdf');
     $this->load->helper('file');
 
+    $data['id'] = $id;
     $data['quote_only'] = $quote_only == "quote";
     $data['page_title'] = $this->lang->line('menu_invoices');
 
@@ -788,7 +793,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   /**
     * Batch PDF
@@ -820,7 +825,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function payment()
   {
@@ -850,7 +855,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function delete($id)
   {
@@ -860,7 +865,7 @@ class Invoices extends MY_Controller {
     $this->load->view('invoices/delete', $data);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function delete_confirmed()
   {
@@ -870,7 +875,7 @@ class Invoices extends MY_Controller {
     redirect('invoices/');
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function retrieveInvoices()
   {
@@ -924,7 +929,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function dateIssued($str)
   {
@@ -939,7 +944,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function _delete_stored_files()
   {
@@ -949,7 +954,7 @@ class Invoices extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function _get_logo($target='', $context='web')
   {
@@ -959,7 +964,7 @@ class Invoices extends MY_Controller {
     return get_logo($this->settings_model->get_setting('logo'.$target), $context);
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function _tax_info($data)
   {
@@ -978,12 +983,12 @@ class Invoices extends MY_Controller {
     return $tax_info;
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function _validation()
   {
     $rules['client_id']     = 'required|numeric';
-    $rules['invoice_number']   = 'trim|required|htmlspecialchars|max_length[12]|alpha_dash|callback_uniqueInvoice';
+    $rules['invoice_number']   = 'trim|required|htmlspecialchars|max_length[255]|alpha_dash|callback_uniqueInvoice';
     $rules['dateIssued']     = 'trim|htmlspecialchars|callback_dateIssued';
     $rules['invoice_note']     = 'trim|htmlspecialchars|max_length[2000]';
     $rules['tax1_description']   = 'trim|htmlspecialchars|max_length[50]';
@@ -1005,7 +1010,7 @@ class Invoices extends MY_Controller {
     $this->validation->set_error_delimiters('<span class="error">', '</span>');
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function _validation_edit()
   {
@@ -1038,5 +1043,6 @@ class Invoices extends MY_Controller {
 
     return $this->invoices_model->uniqueInvoiceNumber($this->input->post('invoice_number'));
   }
+
 } 
 ?>
