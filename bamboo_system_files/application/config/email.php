@@ -18,5 +18,4 @@ $config['smtp_pass'] = 'password';
 $config['smtp_port'] = '25';
 */
 
-/* End of file email.php */
-/* Location: ./system/application/config/email.php */
+?>
