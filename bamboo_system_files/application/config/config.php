@@ -9,13 +9,13 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 | URL to your Code Igniter root. Typically this will be your base URL,
 | WITH a trailing slash:
 |
-|  http://www.your-site.com/
+|	http://www.your-site.com/
 |
 */
-$config['base_url']  = 'http://localhost/bambooinvoice/';
+$config['base_url']	= 'http://localhost/borealinvoice/';
 // This should be a full address, with a slash.  For example, here's what
 // I use on bambooinvoice.org:
-//$config['base_url']  = 'http://bambooinvoice.org/';
+//$config['base_url']	= 'http://bambooinvoice.org/';
 
 /*
 |--------------------------------------------------------------------------
@@ -38,14 +38,14 @@ $config['index_page'] = 'index.php';
 | URI string.  The default setting of 'AUTO' works for most servers.
 | If your links do not seem to work, try one of the other delicious flavors:
 |
-| 'AUTO'      Default - auto detects
-| 'PATH_INFO'    Uses the PATH_INFO
-| 'QUERY_STRING'  Uses the QUERY_STRING
-| 'REQUEST_URI'    Uses the REQUEST_URI
-| 'ORIG_PATH_INFO'  Uses the ORIG_PATH_INFO
+| 'AUTO'			Default - auto detects
+| 'PATH_INFO'		Uses the PATH_INFO
+| 'QUERY_STRING'	Uses the QUERY_STRING
+| 'REQUEST_URI'		Uses the REQUEST_URI
+| 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']  = 'AUTO';
+$config['uri_protocol']	= 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']  = 'english';
+$config['language']	= 'spanish';
 
 /*
 |--------------------------------------------------------------------------
@@ -166,12 +166,12 @@ $config['function_trigger'] = 'm';
 | You can enable error logging by setting a threshold over zero. The
 | threshold determines what gets logged. Threshold options are:
 |
-|  0 = Disables logging
-|   0 = Error logging TURNED OFF
-|  1 = Error Messages (including PHP errors)
-|  2 = Debug Messages
-|  3 = Informational Messages
-|  4 = All Messages
+|	0 = Disables logging
+| 	0 = Error logging TURNED OFF
+|	1 = Error Messages (including PHP errors)
+|	2 = Debug Messages
+|	3 = Informational Messages
+|	4 = All Messages
 |
 | For a live site you'll usually only enable Errors (1) to be logged otherwise
 | your log files will fill up very fast.
@@ -232,17 +232,17 @@ $config['encryption_key'] = 'bamboo_encryption_key_Gg2F5';
 | 'encrypt_sess_cookie' = TRUE/FALSE (boolean).  Whether to encrypt the cookie
 | 'session_expiration'  = the number of SECONDS you want the session to last.
 |  by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
-| 'time_to_update'    = how many seconds between CI refreshing Session Information
+| 'time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']    = 'bamboo_sessions';
-$config['sess_expiration']    = 3600;
-$config['sess_encrypt_cookie']  = TRUE;
-$config['sess_use_database']  = FALSE;
-$config['sess_table_name']    = 'sessions';
-$config['sess_match_ip']    = FALSE;
-$config['sess_match_useragent']  = TRUE;
-$config['sess_time_to_update']   = 300;
+$config['sess_cookie_name']		= 'bamboo_sessions';
+$config['sess_expiration']		= 3600;
+$config['sess_encrypt_cookie']	= TRUE;
+$config['sess_use_database']	= FALSE;
+$config['sess_table_name']		= 'sessions';
+$config['sess_match_ip']		= FALSE;
+$config['sess_match_useragent']	= TRUE;
+$config['sess_time_to_update'] 	= 300;
 
 /*
 |--------------------------------------------------------------------------
@@ -254,9 +254,9 @@ $config['sess_time_to_update']   = 300;
 | 'cookie_path'   =  Typically will be a forward slash
 |
 */
-$config['cookie_prefix']  = 'bamboo';
-$config['cookie_domain']  = '';
-$config['cookie_path']    = '/';
+$config['cookie_prefix']	= 'bamboo';
+$config['cookie_domain']	= '';
+$config['cookie_path']		= '/';
 
 /*
 |--------------------------------------------------------------------------
