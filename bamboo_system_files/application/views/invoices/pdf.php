@@ -181,11 +181,34 @@ table.stripe td {
 
   <p><?php echo auto_typography($row->invoice_note);?></p>
 
-  <?php if ($this->config->item('show_client_notes') === TRUE):?>
-  <p>
-    <?php echo auto_typography($client_note)?>
-  </p>
-  <?php endif;?>
+
+	<?php if ($this->config->item('show_client_notes') === TRUE):?>
+	<p>
+		<?php echo auto_typography($client_note)?>
+	</p>
+	<?php endif;?>
+	
+	<?php if (($this->settings_model->get_setting('google_merchant_id')) or ($this->settings_model->get_setting('paypal_email'))): ?>
+	<p>
+		<?
+			if ($this->settings_model->get_setting('google_merchant_id'))
+			{
+				echo '<a href="'.$this->config->item('base_url').$this->config->item('index_page').'/paynow/googlecheckout/'.$id.'">
+					<img src="https://checkout.google.com/buttons/buy.gif?merchant_id='.$this->settings_model->get_setting('google_merchant_id').'&amp;w=117&amp;h=48&amp;style=white&amp;variant=text&amp;loc=en_US">
+				</a>';
+			}
+			
+			if ($this->settings_model->get_setting('paypal_email'))
+			{
+				echo '<a href="'.$this->config->item('base_url').$this->config->item('index_page').'/paynow/paypal/'.$id.'">
+					<img src="https://www.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif">
+				</a>';
+			}
+		?>
+	</p>
+	<br>
+	<?php endif; ?>
+
 
   <div id="footer">
     <?php if ($this->settings_model->get_setting('display_branding') == 'y'):?>

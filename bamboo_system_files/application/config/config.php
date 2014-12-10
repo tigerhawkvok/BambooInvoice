@@ -1,33 +1,19 @@
 <?php  
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-/*
-|--------------------------------------------------------------------------
-| Base Site URL
-|--------------------------------------------------------------------------
-|
-| URL to your Code Igniter root. Typically this will be your base URL,
-| WITH a trailing slash:
-|
-|	http://www.your-site.com/
-|
-*/
-$config['base_url']	= 'http://localhost/borealinvoice/';
-// This should be a full address, with a slash.  For example, here's what
-// I use on bambooinvoice.org:
-//$config['base_url']	= 'http://bambooinvoice.org/';
+include('settings.php');
 
-/*
-|--------------------------------------------------------------------------
-| Index File
-|--------------------------------------------------------------------------
-|
-| Typically this will be your index.php file, unless you've renamed it to
-| something else. If you are using mod_rewrite to remove the page set this
-| variable so that it is blank.
-|
-*/
-$config['index_page'] = 'index.php';
+/***
+ * See [bambooinvoice]/application/config/settings.php for these settings
+ ***/
+
+$config['base_url']	= $base_url;
+$config['index_page'] = $index_page;
+$config['encryption_key'] = $encryption_key;
+
+/***
+ * Everything else
+ ***/
 
 /*
 |--------------------------------------------------------------------------
@@ -214,17 +200,6 @@ $config['cache_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
-| Encryption Key
-|--------------------------------------------------------------------------
-|
-| If you use the Encryption class or the Sessions class with encryption
-| enabled you MUST set an encryption key.  See the user guide for info.
-|
-*/
-$config['encryption_key'] = 'bamboo_encryption_key_Gg2F5';
-
-/*
-|--------------------------------------------------------------------------
 | Session Variables
 |--------------------------------------------------------------------------
 |
@@ -254,9 +229,9 @@ $config['sess_time_to_update'] 	= 300;
 | 'cookie_path'   =  Typically will be a forward slash
 |
 */
-$config['cookie_prefix']	= 'bamboo';
-$config['cookie_domain']	= '';
-$config['cookie_path']		= '/';
+$config['cookie_prefix']	= $cookie_prefix;
+$config['cookie_domain']	= $cookie_domain;
+$config['cookie_path']		= $cookie_path;
 
 /*
 |--------------------------------------------------------------------------

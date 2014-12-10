@@ -94,10 +94,10 @@ $this->load->view('header');
       </label>
     </p>
 
-    <p>
-      <input type="submit" name="createInvoice" id="createInvoice" value="<?php echo $this->lang->line($button_label);?>" />
-    </p>
-
+		<p><label>Recur in <input type="text" name="recur_interval" size="2" maxlength="11" value="<? echo $row->recur_interval; ?>"> day(s) (leave blank to disable)</label></p>
+		<p>
+			<input type="submit" name="createInvoice" id="createInvoice" value="<?php echo $this->lang->line($button_label);?>" />
+		</p>
   </form>
 
 <?php

@@ -10,7 +10,7 @@ class Settings extends MY_Controller {
     $this->load->model('settings_model');
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function index()
   {
@@ -52,6 +52,8 @@ class Settings extends MY_Controller {
               'country' => $this->input->post('country'),
               'postal_code' => $this->input->post('postal_code'),
               'website' => $this->input->post('website'),
+              'google_merchant_id' => $this->input->post('google_merchant_id'),
+							'paypal_email' => $this->input->post('paypal_email'),
               'primary_contact' => $this->input->post('primary_contact'),
               'primary_contact_email' => $this->input->post('primary_contact_email'),
               'invoice_note_default' => $this->input->post('invoice_note_default'),
@@ -126,7 +128,7 @@ class Settings extends MY_Controller {
     }
   }
 
-  // --------------------------------------------------------------------
+  // ------------------------
 
   function _validation()
   {
@@ -138,6 +140,8 @@ class Settings extends MY_Controller {
     $rules['country']       = "trim|prep_for_form|max_length[25]";
     $rules['postal_code']     = "trim|prep_for_form|max_length[10]";
     $rules['website']       = "trim|prep_for_form|max_length[150]";
+    $rules['google_merchant_id'] = "trim|prep_for_form|max_length[50]";
+		$rules['paypal_email'] = "trim|prep_for_form|max_length[50]";
     $rules['primary_contact']   = "trim|prep_for_form|required|max_length[75]";
     $rules['primary_contact_email'] = "trim|prep_for_form|required|max_length[50]|valid_email";
     $rules['password']       = "min_length[4]|max_length[50]|alpha_dash";
@@ -166,6 +170,8 @@ class Settings extends MY_Controller {
     $fields['country']       = $this->lang->line('clients_country');
     $fields['postal_code']     = $this->lang->line('clients_postal');
     $fields['website']       = $this->lang->line('clients_website');
+    $fields['google_merchant_id'] 	= 'Google Merchant ID';
+		$fields['paypal_email'] 	= 'PayPal E-Mail';
     $fields['primary_contact']   = $this->lang->line('settings_primary_contact');
     $fields['primary_contact_email'] = $this->lang->line('settings_primary_email');
     $fields['password']     = $this->lang->line('login_password');
