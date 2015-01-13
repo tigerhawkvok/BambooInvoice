@@ -54,8 +54,42 @@ $dbcollat = 'utf8_general_ci';
 $cookie_prefix = "bamboo";
 $cookie_domain = "";
 $cookie_path = "/";
+/*
+  |--------------------------------------------------------------------------
+  | Encryption Key
+  |--------------------------------------------------------------------------
+  |
+  | If you use the Encryption class or the Sessions class with encryption
+  | enabled you MUST set an encryption key.  See the user guide for info.
+  |
+*/
 $encryption_key = "bamboo_encryption_key_Gg2F5";
+/*
+  |--------------------------------------------------------------------------
+  | Index File
+  |--------------------------------------------------------------------------
+  |
+  | Typically this will be your index.php file, unless you've renamed it to
+  | something else. If you are using mod_rewrite to remove the page set this
+  | variable so that it is blank.
+  |
+*/
 $index_page = "index.php";
+/*
+  |--------------------------------------------------------------------------
+  | Base Site URL
+  |--------------------------------------------------------------------------
+  |
+  | URL to your Code Igniter root. Typically this will be your base URL,
+  | WITH a trailing slash:
+  |
+  |	http://www.your-site.com/
+  |
+*/
 $base_url = "http://localhost/bambooinvoice/";
+// This should be a full address, with a slash.  For example, here's what
+// I use on bambooinvoice.org:
+//$config['base_url']	= 'http://bambooinvoice.org/';
+
 
 ?>
