@@ -8,14 +8,9 @@ if ( floor( phpversion() ) < 5 ) {
 |---------------------------------------------------------------
 | PHP ERROR REPORTING LEVEL
 |---------------------------------------------------------------
-|
-| By default CI runs with error reporting set to ALL.  For security
-| reasons you are encouraged to change this when your site goes live.
-| For more info visit:  http://www.php.net/error_reporting
-|
 */
-//	error_reporting(0);
-error_reporting( E_ALL );
+error_reporting(0); # Report no errors. Use in production.
+# error_reporting( E_ALL ); # Report all errors. Use in the dev environment.
 
 /*
 |---------------------------------------------------------------
